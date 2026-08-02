@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seixo — Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC;
+    --surface: #FFFFFF;
+    --border: #DDD6CB;
+    --text: #2B2A27;
+    --text-secondary: #6B6558;
+    --accent: #CC785C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624;
+      --surface: #30302E;
+      --border: #47463F;
+      --text: #F2EFE9;
+      --text-secondary: #B3ADA0;
+      --accent: #DA9179;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+  }
+  .updated {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: var(--accent);
+  }
+  strong {
+    font-weight: 600;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <nav class="lang-switch">
+    <a href="index.html">Português</a>
+    <a href="en.html" class="current">English</a>
+    <a href="es.html">Español</a>
+  </nav>
+  <header>
+    <p class="brand">Seixo</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: August 2, 2026</p>
+  </header>
+
+  <p>This policy describes, accurately and verifiably against the app's real source code, what data the Seixo app collects, who else has access to it, for how long, and how you can request its deletion.</p>
+
+  <p>Data controller: Bruno, individual developer of the Seixo app. Contact: <a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a>.</p>
+
+  <h2>What the app collects</h2>
+  <ul>
+    <li><strong>An anonymous identity</strong>: the first time you use the app, a random identifier (UUID) is created for you, with no phone number, email, or name required. We don't ask for or store any of these.</li>
+    <li><strong>An identity public key</strong> (part of the Signal encryption protocol) — used to establish encrypted conversations. It's only a public key, never your private key, which never leaves your phone.</li>
+    <li><strong>Temporary public keys (prekeys)</strong> — used once to start a conversation with you, then deleted.</li>
+    <li><strong>Which conversations you belong to</strong> (an opaque channel identifier, and who else is in that channel) — the minimum the server needs to know to deliver messages.</li>
+    <li><strong>Message content, always encrypted</strong> — the server never sees the text of any message. We also don't store who sent each message in a separate column (the sender's identity only exists inside the encrypted content itself).</li>
+    <li><strong>Your list of blocked contacts</strong> — visible only to you, never shared with anyone else.</li>
+    <li><strong>Unavoidable connection metadata</strong> (IP address, request time) — as with any online service, the server infrastructure sees this at the network level.</li>
+  </ul>
+  <p>The app requests <strong>camera</strong> access only to read QR codes when adding a contact — the camera image is never uploaded or stored anywhere, it's processed entirely on your phone.</p>
+  <p><strong>What we don't collect, at all</strong>: phone number, email (unless you write to us for support), name, your phone's contact list, location, advertising data or advertising identifiers, and we don't use any third-party analytics, tracking, or advertising SDK.</p>
+
+  <h2>How long we keep data</h2>
+  <ul>
+    <li>Messages: automatically deleted from the server once the per-conversation timer you chose expires (between 30 seconds and 1 week), regardless of whether you ever opened the app.</li>
+    <li>Unused temporary keys: deleted after 30 days.</li>
+    <li>Conversation channels that were never used: deleted after 7 days.</li>
+    <li>Your identity and block list: kept for as long as your account exists.</li>
+  </ul>
+
+  <h2>Who else has access to your data</h2>
+  <ul>
+    <li><strong>The other person in the conversation</strong> — only they can decrypt and read the content, on their own device.</li>
+    <li><strong>The infrastructure hosting the service</strong> (currently Supabase Inc.) — sees connection metadata and encrypted content (unreadable without the key, which is never given to them), as with any infrastructure provider for any online service.</li>
+    <li><strong>Nobody else.</strong> We don't sell, rent, or share data with advertisers, social networks, or any other third party.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <ul>
+    <li><strong>Delete your account and all data</strong>: available at any time in Settings → "Delete account and all data", inside the app itself. This deletes your identity, keys, started conversations, and block list from the server, and also clears data stored on your device.</li>
+    <li><strong>Access, correct, or request a copy of your data</strong>: write to seixo.app@proton.me.</li>
+    <li>If you're in the European Union, these rights correspond to the rights of access, rectification, erasure, and portability under the GDPR.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>Messages are end-to-end encrypted (the Signal protocol — X3DH/PQXDH and Double Ratchet, via Signal's own official <code>libsignal</code> library). Your session and identity keys are encrypted at rest on your device, protected by Keychain (iOS) or Keystore (Android). This isn't an absolute guarantee — no app can protect you if your own device is compromised, or if someone photographs the screen with a separate device.</p>
+
+  <h2>Children's privacy</h2>
+  <p>The app is not directed at children, and we do not knowingly collect data from minors. We don't currently have an age-verification mechanism.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes significantly, that will be reflected on this page with a revised update date.</p>
+
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p style="margin:0">Questions, data-related requests, or reports:<br><strong><a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a></strong></p>
+  </div>
+</div>
+</body>
+</html>

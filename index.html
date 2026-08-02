@@ -87,10 +87,28 @@
     padding: 16px 20px;
     margin-top: 12px;
   }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
 <div class="wrapper">
+  <nav class="lang-switch">
+    <a href="index.html" class="current">Português</a>
+    <a href="en.html">English</a>
+    <a href="es.html">Español</a>
+  </nav>
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidade</h1>
