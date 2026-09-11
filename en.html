@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seixo — Privacy Policy</title>
+<title>Seixo — Privacy policy</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -111,61 +111,105 @@
   </nav>
   <header>
     <p class="brand">Seixo</p>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 2, 2026</p>
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated: 11 September 2026</p>
   </header>
 
-  <p>This policy describes, accurately and verifiably against the app's real source code, what data the Seixo app collects, who else has access to it, for how long, and how you can request its deletion.</p>
-
+  <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
   <p>Data controller: Bruno, individual developer of the Seixo app. Contact: <a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a>.</p>
 
-  <h2>What the app collects</h2>
+  <h2>In short</h2>
   <ul>
-    <li><strong>An anonymous identity</strong>: the first time you use the app, a random identifier (UUID) is created for you, with no phone number, email, or name required. We don't ask for or store any of these.</li>
-    <li><strong>An identity public key</strong> (part of the Signal encryption protocol) — used to establish encrypted conversations. It's only a public key, never your private key, which never leaves your phone.</li>
-    <li><strong>Temporary public keys (prekeys)</strong> — used once to start a conversation with you, then deleted.</li>
-    <li><strong>Which conversations you belong to</strong> (an opaque channel identifier, and who else is in that channel) — the minimum the server needs to know to deliver messages.</li>
-    <li><strong>Message content, always encrypted</strong> — the server never sees the text of any message. We also don't store who sent each message in a separate column (the sender's identity only exists inside the encrypted content itself).</li>
-    <li><strong>Your list of blocked contacts</strong> — visible only to you, never shared with anyone else.</li>
-    <li><strong>Unavoidable connection metadata</strong> (IP address, request time) — as with any online service, the server infrastructure sees this at the network level.</li>
+    <li>We never ask for a phone number, name, email or access to your contacts.</li>
+    <li>The server can never read your messages: they are encrypted on your phone before they leave it.</li>
+    <li>Almost everything the server keeps deletes itself — we say below when.</li>
+    <li>We use no third-party advertising, analytics or tracking.</li>
   </ul>
-  <p>The app requests <strong>camera</strong> access only to read QR codes when adding a contact — the camera image is never uploaded or stored anywhere, it's processed entirely on your phone.</p>
-  <p><strong>What we don't collect, at all</strong>: phone number, email (unless you write to us for support), name, your phone's contact list, location, advertising data or advertising identifiers, and we don't use any third-party analytics, tracking, or advertising SDK.</p>
+
+  <h2>What the server keeps</h2>
+  <p><strong>About your account:</strong></p>
+  <ul>
+    <li><strong>A random identifier</strong>, created the first time you open the app. It is not linked to any data about you.</li>
+    <li><strong>Your public identity key and temporary public keys</strong> (Signal Protocol), so other people can start encrypted conversations with you. Private keys never leave your phone.</li>
+    <li><strong>The date you last used the app</strong> — the day only, never the time — so abandoned accounts can be deleted.</li>
+    <li><strong>The list of people you have blocked</strong>, visible only to you.</li>
+    <li><strong>A notification token</strong> for your phone and the generic text your phone chose to display (for example, “You have a new message.”). It never includes the content or the sender.</li>
+  </ul>
+  <p><strong>About your conversations:</strong></p>
+  <ul>
+    <li><strong>Which conversations exist and who belongs to each</strong> and, for groups, who owns them. This is the minimum the server needs to know where to deliver each message.</li>
+    <li><strong>Messages, always encrypted.</strong> For each one the server sees which conversation it belongs to, the exact time, its size and whether it should trigger a notification — never its content.</li>
+    <li><strong>Who sent it:</strong> in a one-to-one conversation this is not stored. <strong>In a group, the server can see who sent each message</strong> for as long as that message exists, because recipients need to know which key to decrypt it with.</li>
+    <li><strong>Group names and the names you give contacts</strong> never reach the server in readable form.</li>
+  </ul>
+  <p><strong>Only if you create a backup:</strong></p>
+  <ul>
+    <li><strong>An address and password derived from your 12 recovery words</strong>, so you can get back into the same account on another phone. The address ends in <code>@seixo.invalid</code>: it is not a real email, cannot receive mail and reveals nothing about you. The password is stored in irreversible form.</li>
+    <li><strong>The backup file does not stay with us.</strong> It lives wherever you put it, and only opens with your 12 words, which we never receive.</li>
+  </ul>
+
+  <h2>IP addresses</h2>
+  <p>Like any internet service, the server sees the IP address you connect from. Here is what we do with it:</p>
+  <ul>
+    <li>The authentication service records the IP and device type for each session. <strong>We erase both fields every minute.</strong></li>
+    <li>The authentication audit log is deleted after <strong>one hour</strong>.</li>
+    <li>The hosting provider keeps technical request logs, which include the IP, for a short period that it sets and we do not control.</li>
+  </ul>
+  <p>The app does not hide your IP. If that matters to you, use a VPN or Tor.</p>
+
+  <h2>Phone permissions</h2>
+  <ul>
+    <li><strong>Camera</strong>: only to scan a contact's QR code. The image is processed on the phone and never sent or stored.</li>
+    <li><strong>Microphone</strong>: only to record voice messages, when you press the button. Recordings are encrypted on the phone before they leave it.</li>
+    <li><strong>Face ID</strong>: only to unlock the app, if you turn the lock on. It is handled by the phone's own system; nothing leaves the device.</li>
+    <li><strong>Notifications</strong>: so you know a message has arrived.</li>
+  </ul>
+
+  <h2>What we do not collect</h2>
+  <p>Phone number, name, real email (unless you write to us for support), your phone's contact list, location, photos or advertising identifiers. We use no analytics, tracking or advertising SDKs.</p>
 
   <h2>How long we keep data</h2>
   <ul>
-    <li>Messages: automatically deleted from the server once the per-conversation timer you chose expires (between 30 seconds and 1 week), regardless of whether you ever opened the app.</li>
-    <li>Unused temporary keys: deleted after 30 days.</li>
-    <li>Conversation channels that were never used: deleted after 7 days.</li>
-    <li>Your identity and block list: kept for as long as your account exists.</li>
+    <li><strong>Messages</strong>: deleted from the server when the timer you chose runs out — between 30 seconds and 1 week, for the conversation or for a single message — even if nobody opens the app.</li>
+    <li><strong>Voice messages</strong>: on the server for at most <strong>24 hours</strong>, or less if the timer is shorter. Anyone who does not open the app within that window will not receive them.</li>
+    <li><strong>Conversations</strong>: a conversation older than 7 days is deleted from the server, with its member list, as soon as it has no unexpired messages left.</li>
+    <li><strong>Temporary keys never used</strong>: 30 days.</li>
+    <li><strong>Accounts</strong>: deleted after <strong>6 months without opening the app</strong>, with everything that belongs to them. A backup of that account stops working.</li>
+    <li><strong>Block list, notification token and backup credentials</strong>: for as long as the account exists.</li>
+    <li><strong>IP addresses</strong>: see the section above.</li>
   </ul>
 
   <h2>Who else has access to your data</h2>
   <ul>
-    <li><strong>The other person in the conversation</strong> — only they can decrypt and read the content, on their own device.</li>
-    <li><strong>The infrastructure hosting the service</strong> (currently Supabase Inc.) — sees connection metadata and encrypted content (unreadable without the key, which is never given to them), as with any infrastructure provider for any online service.</li>
-    <li><strong>Nobody else.</strong> We don't sell, rent, or share data with advertisers, social networks, or any other third party.</li>
+    <li><strong>The people in the conversation</strong> — only they can decrypt the content, on their own phones.</li>
+    <li><strong>Supabase Inc.</strong>, which hosts the database and server in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read.</li>
+    <li><strong>Expo (650 Industries, Inc.) and Apple</strong>, which relay notifications to your phone. They receive the token and the generic notification text — never the content or the sender.</li>
+    <li><strong>Proton AG</strong>, only if you write to us at seixo.app@proton.me.</li>
+    <li><strong>No one else.</strong> We do not sell, rent or share data with advertisers, social networks or any other third parties.</li>
   </ul>
+
+  <h2>Reports</h2>
+  <p>The button to report a contact opens your email app with a pre-filled message that includes that contact's identifier. Nothing is sent until you press send.</p>
 
   <h2>Your rights</h2>
   <ul>
-    <li><strong>Delete your account and all data</strong>: available at any time in Settings → "Delete account and all data", inside the app itself. This deletes your identity, keys, started conversations, and block list from the server, and also clears data stored on your device.</li>
-    <li><strong>Access, correct, or request a copy of your data</strong>: write to seixo.app@proton.me.</li>
-    <li>If you're in the European Union, these rights correspond to the rights of access, rectification, erasure, and portability under the GDPR.</li>
+    <li><strong>Delete your account and all data</strong>: at any time, under Settings → “Delete account and all data”. This deletes your identity, keys, conversation memberships, block list, notification token and backup credentials from the server, and clears the data on your phone. Messages you already sent remain encrypted until their timer deletes them, and any backup you saved stops working.</li>
+    <li><strong>Access, correct or request a copy of your data</strong>: write to seixo.app@proton.me. Since we do not know who you are, we may ask for the ID shown in the app to find your data.</li>
+    <li>If you are in the European Union, these correspond to the rights of access, rectification, erasure and portability under the GDPR.</li>
   </ul>
 
   <h2>Security</h2>
-  <p>Messages are end-to-end encrypted (the Signal protocol — X3DH/PQXDH and Double Ratchet, via Signal's own official <code>libsignal</code> library). Your session and identity keys are encrypted at rest on your device, protected by Keychain (iOS) or Keystore (Android). This isn't an absolute guarantee — no app can protect you if your own device is compromised, or if someone photographs the screen with a separate device.</p>
+  <p>Messages are end-to-end encrypted with the Signal Protocol (PQXDH and Double Ratchet), using the official <code>libsignal</code> library. Your keys are stored encrypted on your phone, protected by the Keychain (iOS) or Keystore (Android), and temporary session keys are renewed every 2 days. This is not an absolute guarantee: no app can protect you if your own phone is compromised, or if someone photographs the screen with another device.</p>
 
-  <h2>Children's privacy</h2>
-  <p>The app is not directed at children, and we do not knowingly collect data from minors. We don't currently have an age-verification mechanism.</p>
+  <h2>Children</h2>
+  <p>The app is not directed at children and we do not knowingly request data from minors. We do not currently have an age verification mechanism.</p>
 
   <h2>Changes to this policy</h2>
-  <p>If this policy changes significantly, that will be reflected on this page with a revised update date.</p>
+  <p>If this policy changes significantly, it will be reflected on this page with a revised update date.</p>
 
   <h2>Contact</h2>
   <div class="contact-box">
-    <p style="margin:0">Questions, data-related requests, or reports:<br><strong><a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a></strong></p>
+    <p style="margin:0">Questions, requests about your data, or reports:<br><strong><a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a></strong></p>
   </div>
 </div>
 </body>
