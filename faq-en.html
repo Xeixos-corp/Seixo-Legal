@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seixo — FAQ</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC;
+    --surface: #FFFFFF;
+    --border: #DDD6CB;
+    --text: #2B2A27;
+    --text-secondary: #6B6558;
+    --accent: #CC785C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624;
+      --surface: #30302E;
+      --border: #47463F;
+      --text: #F2EFE9;
+      --text-secondary: #B3ADA0;
+      --accent: #DA9179;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+  }
+  .updated {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: var(--accent);
+  }
+  strong {
+    font-weight: 600;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .doc-switch {
+    margin-top: -12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <nav class="lang-switch">
+    <a href="faq.html">Português</a>
+    <a href="faq-en.html" class="current">English</a>
+    <a href="faq-es.html">Español</a>
+  </nav>
+  <nav class="lang-switch doc-switch">
+    <a href="en.html">Privacy policy</a>
+    <a href="terms-en.html">Terms of use</a>
+    <a href="faq-en.html" class="current">FAQ</a>
+  </nav>
+  <header>
+    <p class="brand">Seixo</p>
+    <h1>Frequently asked questions</h1>
+    <p class="updated">Last updated: 13 September 2026</p>
+  </header>
+
+  <p>Answers to the questions Seixo raises by being unlike other messaging apps: it asks for no phone number, does not keep your conversations, and cannot read them. Everything here is verifiable in how the app behaves.</p>
+
+  <h2>Do I need a phone number, an email address or a password?</h2>
+  <p>No. None of the three, and there is nowhere to enter them.</p>
+  <p>The first time you open the app it creates an identity on your phone: a pair of cryptographic keys that never leave it, and a random identifier tied to nothing about you. That is all. There is no sign-up, no session to start, nothing to forget.</p>
+  <p>The trade-off is the next question, and it is worth reading now rather than when it is too late.</p>
+
+  <h2>I am changing phones. How do I take my account with me?</h2>
+  <p>Before you switch, on the old phone: <strong>Settings → Backup → Create backup</strong>.</p>
+  <p>You get two things, and you need both:</p>
+  <ul>
+    <li><strong>Twelve words.</strong> Write them on paper. They are what opens the file, and there is no other way in.</li>
+    <li><strong>An encrypted file.</strong> Keep it wherever you like — in Files, in iCloud, sent to your computer. It does not stay with us.</li>
+  </ul>
+  <p>Keep them <strong>apart</strong>. A file without the words is useless to whoever finds it; the words without the file are useless too.</p>
+  <p>On the new phone, on the first screen, choose <strong>"I already have a backup"</strong>, pick the file and type the twelve words.</p>
+  <p>What crosses over: <strong>who you are</strong> — your ID and your key. Your contacts carry on talking to you without having to verify you again. What does <strong>not</strong> cross over: the messages. They stay on the old phone and disappear from it when their timer runs out.</p>
+
+  <h2>I lost my phone and had no backup. Can you recover my account?</h2>
+  <p>No. And this is not reluctance or policy: <strong>we have no way to</strong>.</p>
+  <p>The key that decrypts your conversations only ever existed inside that phone. We never received it, never stored it, and there is no copy anywhere. An app whose owner could restore somebody's account is an app whose owner can enter anybody's account — and then nothing else on this page would be true.</p>
+  <p>What actually happens:</p>
+  <ul>
+    <li>The old account sits on the server unused and <strong>deletes itself after six months</strong>.</li>
+    <li>You can start again: open the app, get a new ID, and tell your contacts.</li>
+    <li>People who were already talking to you will see a warning that your safety key changed. That is the system working, not a fault — it is the same warning that would appear if somebody were impersonating you.</li>
+  </ul>
+  <p>If there is one thing to do after reading this page, it is the backup.</p>
+
+  <h2>What is my ID, and who can I give it to?</h2>
+  <p>It is your address inside Seixo: a random string that says nothing about you — no name, no country, no phone number, because the app never knew any of that.</p>
+  <p>You will find it under <strong>"My ID"</strong>, with a QR code. Someone next to you scans the code; someone far away gets the ID copied through whatever channel suits you.</p>
+  <p>Give it to whoever you like. The only thing it allows is starting a conversation with you — and if that person becomes a nuisance, you block them and they can no longer write to you.</p>
+
+  <h2>Why do messages disappear? Can I change how long they last?</h2>
+  <p>Because that is what a conversation does when nobody is archiving it: it ends. A message that no longer exists cannot be read by whoever picks up the phone months later.</p>
+  <p>At the top of each conversation you choose: <strong>30 seconds, 5 minutes, 1 hour, 1 day or 1 week</strong>. It starts at 1 day.</p>
+  <p>Two details nobody discovers on their own:</p>
+  <ul>
+    <li>The choice applies to <strong>the messages you send</strong>, in that conversation. Each person decides for their own.</li>
+    <li>For a single message that should last less than usual, <strong>press and hold the send button</strong> and pick a time. Only times shorter than the conversation's are offered: it is for saying something in passing, not for getting around what the conversation agreed.</li>
+  </ul>
+  <p>When the time is up, the message disappears from the phones and from the server. What we cannot promise is anything outside the app: whoever has the message in front of them can photograph or copy it, here as anywhere.</p>
+
+  <h2>Why doesn't the notification say who wrote, or what they said?</h2>
+  <p>Because there is no way for it to, and because it is better this way.</p>
+  <p>The server that sends the notification <strong>never saw the content</strong> of the message — it received it already encrypted. It does not even say which conversation it is: that does not travel in the notification, precisely so that Apple and the push service never learn who you talk to. The generic wording is chosen by your phone, not by us.</p>
+  <p>A side effect that is an advantage: anyone glancing at your lock screen learns nothing. When you open the app, it takes you to the right conversation.</p>
+  <p>If a conversation bothers you without warranting a block, you can <strong>mute</strong> it: press and hold it in the list and choose "Mute".</p>
+
+  <h2>What is the "safety number" and when should I compare it?</h2>
+  <p>It is the fingerprint of your conversation. Inside a conversation, under <strong>"Verify"</strong>, you see a long number — and the other person sees exactly the same one, if you really are talking to each other with nobody in between.</p>
+  <p>Compare it <strong>through another channel</strong>: side by side, or over a call. If it matches, you are fine.</p>
+  <p>If the app ever warns you that somebody's key has <strong>changed</strong>, it is almost always because they reinstalled the app or changed phones. But it is also what you would see if somebody were impersonating them — and the app has no way to tell the two apart. So ask them, through another channel, before carrying on.</p>
+
+  <h2>Can you read my messages? What does the server know?</h2>
+  <p>Read them, no. Messages are encrypted on your phone before they leave, and the key never leaves it. What reaches the server is a block it cannot open.</p>
+  <p>What it does <strong>see</strong>, set out in full in the <a href="en.html">privacy policy</a>:</p>
+  <ul>
+    <li>Which conversations exist and who belongs to each — the minimum needed to know where to deliver a message.</li>
+    <li>For each message: which conversation it belongs to, the time, and the size. Never the content.</li>
+    <li>In a one-to-one conversation it <strong>does not store who sent it</strong>. <strong>In a group it does</strong> — whoever receives it needs to know which key to decrypt with. We say so because it is true, not because we like it.</li>
+    <li>Your IP address, like any service on the internet. The app does not hide it; if that matters to you, use a VPN.</li>
+  </ul>
+  <p>The names you give contacts and the names of groups never reach the server in readable form.</p>
+
+  <h2>Somebody is harassing me. What do I do?</h2>
+  <ul>
+    <li><strong>In a one-to-one conversation:</strong> open it and press <strong>"Block"</strong>. They can no longer write to you.</li>
+    <li><strong>In a group:</strong> open <strong>"Members"</strong> and block that person. Their messages stop reaching you — in the group and in any conversation — while they stay in the group and are never told. If you would rather leave, there is <strong>"Leave"</strong> at the top of the conversation.</li>
+    <li><strong>To tell us:</strong> <strong>"Report"</strong>, at the top of the conversation, opens an email to us. Describe what happened and paste the message in question — we cannot read messages, so without that we have no way of knowing what occurred.</li>
+  </ul>
+  <p>Everyone you have blocked is listed under <strong>Settings → Blocked</strong>, and it can be undone.</p>
+
+  <h2>How do I delete my account, and what disappears?</h2>
+  <p><strong>Settings → Delete account.</strong> This is not a button that only clears this phone:</p>
+  <ul>
+    <li><strong>On the server:</strong> your identity, your keys, your conversations, your block list and your notification token are deleted.</li>
+    <li><strong>On the phone:</strong> the keys, the messages and everything else the app had stored.</li>
+  </ul>
+  <p>If the server does not confirm the deletion, nothing is deleted locally — you are left with an intact account and a clear error, rather than a half-wiped phone and an account you cannot be sure still exists.</p>
+  <p>What we cannot delete are messages already delivered to somebody else's phone. Those stay with them until their timer runs out.</p>
+
+  <h2>If I don't use the app for a long time, do I lose my account?</h2>
+  <p>Yes. An account that goes <strong>six months without being opened is deleted</strong>, along with everything belonging to it.</p>
+  <p>That is deliberate: what is never deleted eventually becomes an archive, and an archive is something somebody can one day demand be handed over. To make this work we keep only the day of last use — never the time.</p>
+  <p>Opening the app now and then is enough. And note that this applies to an account you have a backup of too: if the account is deleted, the backup no longer gets you back in.</p>
+
+  <h2>Is there an Android or desktop version?</h2>
+  <p>For now Seixo is iPhone only.</p>
+  <p>Android is planned — much of the work is already done, because the cryptographic core is the same on both systems — but there is no date, and I would rather not invent one. There are no plans for desktop.</p>
+
+  <h2>My question isn't here</h2>
+  <div class="contact-box">
+    <p style="margin:0">Write to <strong><a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a></strong></p>
+  </div>
+  <p>A note on what we can answer: we cannot see your messages, your conversations, or who your contacts are. That means a great deal another service would sort out for you — "restore my account", "recover that message" — has no solution on our side. It is the price of everything else on this page.</p>
+</div>
+</body>
+</html>

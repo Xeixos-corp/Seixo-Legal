@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seixo — Preguntas frecuentes</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC;
+    --surface: #FFFFFF;
+    --border: #DDD6CB;
+    --text: #2B2A27;
+    --text-secondary: #6B6558;
+    --accent: #CC785C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624;
+      --surface: #30302E;
+      --border: #47463F;
+      --text: #F2EFE9;
+      --text-secondary: #B3ADA0;
+      --accent: #DA9179;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+  }
+  .updated {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: var(--accent);
+  }
+  strong {
+    font-weight: 600;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .doc-switch {
+    margin-top: -12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <nav class="lang-switch">
+    <a href="faq.html">Português</a>
+    <a href="faq-en.html">English</a>
+    <a href="faq-es.html" class="current">Español</a>
+  </nav>
+  <nav class="lang-switch doc-switch">
+    <a href="es.html">Política de privacidad</a>
+    <a href="terms-es.html">Términos de uso</a>
+    <a href="faq-es.html" class="current">Preguntas frecuentes</a>
+  </nav>
+  <header>
+    <p class="brand">Seixo</p>
+    <h1>Preguntas frecuentes</h1>
+    <p class="updated">Última actualización: 13 de septiembre de 2026</p>
+  </header>
+
+  <p>Respuestas a las preguntas que Seixo plantea por ser distinta de otras apps de mensajería: no pide número de teléfono, no guarda tus conversaciones y no puede leerlas. Todo lo que está aquí es verificable en el comportamiento de la app.</p>
+
+  <h2>¿Necesito número de teléfono, correo o contraseña?</h2>
+  <p>No. Ninguno de los tres, y no hay dónde introducirlos.</p>
+  <p>La primera vez que abres la app, esta crea una identidad en tu teléfono: un par de claves criptográficas que nunca salen de ahí, y un identificador aleatorio que no está ligado a nada tuyo. Eso es todo. No hay registro, no hay sesión que iniciar, no hay nada que olvidar.</p>
+  <p>La contrapartida es la pregunta siguiente, y conviene leerla ahora y no cuando sea tarde.</p>
+
+  <h2>He cambiado de teléfono. ¿Cómo me llevo mi cuenta?</h2>
+  <p>Antes de cambiar, en el teléfono antiguo: <strong>Ajustes → Copia de seguridad → Crear copia de seguridad</strong>.</p>
+  <p>Recibes dos cosas, y necesitas las dos:</p>
+  <ul>
+    <li><strong>Doce palabras.</strong> Escríbelas en un papel. Son ellas las que abren el archivo, y no existe otra vía.</li>
+    <li><strong>Un archivo cifrado.</strong> Guárdalo donde quieras — en Archivos, en iCloud, enviado al ordenador. No se queda con nosotros.</li>
+  </ul>
+  <p>Guárdalos <strong>por separado</strong>. Un archivo sin las palabras no le sirve de nada a quien lo encuentre; las palabras sin el archivo, tampoco.</p>
+  <p>En el teléfono nuevo, en la primera pantalla, elige <strong>«Ya tengo una copia de seguridad»</strong>, indica el archivo y escribe las doce palabras.</p>
+  <p>Lo que cruza: <strong>quién eres</strong> — tu ID y tu clave. Tus contactos siguen hablando contigo sin tener que verificarte otra vez. Lo que <strong>no</strong> cruza: los mensajes. Se quedan en el teléfono antiguo y desaparecen de allí cuando venza su temporizador.</p>
+
+  <h2>Perdí el teléfono y no tenía copia de seguridad. ¿Podéis recuperar mi cuenta?</h2>
+  <p>No. Y no es mala voluntad ni política de la casa: <strong>no tenemos forma</strong>.</p>
+  <p>La clave que descifra tus conversaciones solo existió dentro de aquel teléfono. Nunca la recibimos, nunca la guardamos, no hay copia en ninguna parte. Una app en la que el dueño pudiera restaurar la cuenta de alguien sería una app en la que el dueño puede entrar en la cuenta de cualquiera — y entonces nada del resto de esta página sería cierto.</p>
+  <p>Lo que ocurre en la práctica:</p>
+  <ul>
+    <li>La cuenta antigua queda en el servidor sin que nadie la use y <strong>se borra sola a los seis meses</strong>.</li>
+    <li>Puedes empezar de nuevo: abres la app, obtienes un ID nuevo y se lo dices a tus contactos.</li>
+    <li>Quien ya hablaba contigo verá un aviso de que tu clave de seguridad ha cambiado. Es el sistema funcionando bien, no una avería — es el mismo aviso que aparecería si alguien intentara hacerse pasar por ti.</li>
+  </ul>
+  <p>Si hay algo que hacer después de leer esta página, es la copia de seguridad.</p>
+
+  <h2>¿Qué es mi ID y a quién se lo puedo dar?</h2>
+  <p>Es tu dirección dentro de Seixo: una secuencia aleatoria que no dice nada sobre ti — ni nombre, ni país, ni teléfono, porque la app nunca supo nada de eso.</p>
+  <p>Lo encuentras en <strong>«Mi ID»</strong>, con un código QR. Quien esté a tu lado lee el código; quien esté lejos recibe el ID copiado por donde te convenga.</p>
+  <p>Puedes dárselo a quien quieras. Lo único que permite es iniciar una conversación contigo — y si esa persona se vuelve molesta, la bloqueas y deja de poder escribirte.</p>
+
+  <h2>¿Por qué desaparecen los mensajes? ¿Puedo cambiar el tiempo?</h2>
+  <p>Porque es lo que hace una conversación cuando nadie la está archivando: termina. Un mensaje que ya no existe no puede leerlo quien coja el teléfono meses después.</p>
+  <p>En la parte superior de cada conversación eliges: <strong>30 segundos, 5 minutos, 1 hora, 1 día o 1 semana</strong>. Empieza en 1 día.</p>
+  <p>Dos detalles que nadie descubre solo:</p>
+  <ul>
+    <li>La elección se aplica a <strong>los mensajes que tú envías</strong>, en esa conversación. Cada persona decide por los suyos.</li>
+    <li>Para un único mensaje más corto de lo habitual, <strong>mantén pulsado el botón de enviar</strong> y elige el tiempo. Solo aparecen tiempos más cortos que el de la conversación: sirve para decir algo de paso, no para sortear lo acordado en la conversación.</li>
+  </ul>
+  <p>Cuando se acaba el tiempo, el mensaje desaparece de los teléfonos y del servidor. Lo que no podemos prometer es lo que queda fuera de la app: quien tenga el mensaje delante puede fotografiarlo o copiarlo, aquí como en cualquier sitio.</p>
+
+  <h2>¿Por qué la notificación no dice quién escribió ni qué decía?</h2>
+  <p>Porque no hay forma de decirlo, y porque es mejor así.</p>
+  <p>El servidor que envía la notificación <strong>nunca vio el contenido</strong> del mensaje: lo recibió ya cifrado. Ni siquiera dice de qué conversación se trata: esa información no viaja en la notificación, precisamente para que Apple y el servicio de envío no lleguen a saber con quién hablas. El texto genérico lo elige tu teléfono, no nosotros.</p>
+  <p>Efecto secundario que es una ventaja: quien mire tu pantalla bloqueada no se entera de nada. Al abrir la app, esta te lleva a la conversación correcta.</p>
+  <p>Si una conversación te molesta sin llegar a bloquearla, puedes <strong>silenciarla</strong>: mantén el dedo sobre ella en la lista y elige «Silenciar».</p>
+
+  <h2>¿Qué es el «número de seguridad» y cuándo debo compararlo?</h2>
+  <p>Es la huella de vuestra conversación. Dentro de una conversación, en <strong>«Verificar»</strong>, ves un número largo — y la otra persona ve exactamente el mismo, si de verdad estáis hablando el uno con el otro y nadie está en medio.</p>
+  <p>Compáralo <strong>por otra vía</strong>: uno al lado del otro, o por llamada. Si coincide, está todo bien.</p>
+  <p>Si algún día la app te avisa de que la clave de alguien <strong>ha cambiado</strong>, casi siempre es porque esa persona reinstaló la app o cambió de teléfono. Pero es también lo que se vería si alguien intentara hacerse pasar por ella — y la app no puede distinguir ambas cosas. Así que pregúntale, por otra vía, antes de continuar.</p>
+
+  <h2>¿Podéis leer mis mensajes? ¿Qué sabe el servidor?</h2>
+  <p>Leerlos, no. Los mensajes se cifran en tu teléfono antes de salir y la clave nunca sale de ahí. Lo que llega al servidor es un bloque que no puede abrir.</p>
+  <p>Lo que sí <strong>ve</strong>, y que contamos por completo en la <a href="es.html">política de privacidad</a>:</p>
+  <ul>
+    <li>Qué conversaciones existen y quién pertenece a cada una — lo mínimo para saber a quién entregar cada mensaje.</li>
+    <li>De cada mensaje: a qué conversación pertenece, la hora y el tamaño. Nunca el contenido.</li>
+    <li>En una conversación entre dos, <strong>no guarda quién lo envió</strong>. <strong>En un grupo, sí</strong> — quien lo recibe necesita saber con qué clave descifrarlo. Lo decimos porque es verdad, no porque nos guste.</li>
+    <li>Tu dirección IP, como cualquier servicio de internet. La app no la oculta; si eso te importa, usa una VPN.</li>
+  </ul>
+  <p>Los nombres que das a los contactos y los nombres de los grupos nunca llegan al servidor en texto legible.</p>
+
+  <h2>Alguien me está molestando. ¿Qué hago?</h2>
+  <ul>
+    <li><strong>En una conversación entre dos:</strong> ábrela y pulsa <strong>«Bloquear»</strong>. Esa persona deja de poder escribirte.</li>
+    <li><strong>En un grupo:</strong> abre <strong>«Miembros»</strong> y bloquea a esa persona. Sus mensajes dejan de llegarte — en el grupo y en cualquier conversación — mientras ella sigue en el grupo y no se entera. Si prefieres salir, tienes <strong>«Salir»</strong> en la parte superior de la conversación.</li>
+    <li><strong>Para avisarnos:</strong> <strong>«Denunciar»</strong>, en la parte superior de la conversación, abre un correo dirigido a nosotros. Describe lo que pasó y pega el mensaje en cuestión — no podemos leer los mensajes, así que sin eso no tenemos forma de saber qué ocurrió.</li>
+  </ul>
+  <p>A quien has bloqueado lo tienes en <strong>Ajustes → Bloqueados</strong>, y se puede deshacer.</p>
+
+  <h2>¿Cómo borro mi cuenta y qué desaparece?</h2>
+  <p><strong>Ajustes → Borrar cuenta.</strong> No es un botón que limpie solo este teléfono:</p>
+  <ul>
+    <li><strong>En el servidor:</strong> se borran tu identidad, tus claves, tus conversaciones, tu lista de bloqueados y tu token de notificaciones.</li>
+    <li><strong>En el teléfono:</strong> las claves, los mensajes y todo lo demás que la app tuviera guardado.</li>
+  </ul>
+  <p>Si el servidor no confirma el borrado, no se borra nada localmente: te quedas con la cuenta intacta y un error delante, en vez de con medio teléfono limpio y una cuenta de la que no sabes si sigue existiendo.</p>
+  <p>Lo que no podemos borrar son los mensajes ya entregados al teléfono de otra persona. Esos se quedan con ella hasta que venza su temporizador.</p>
+
+  <h2>Si no uso la app durante mucho tiempo, ¿pierdo la cuenta?</h2>
+  <p>Sí. Una cuenta que pase <strong>seis meses sin abrirse se borra</strong>, con todo lo que le pertenece.</p>
+  <p>Es deliberado: lo que nunca se borra acaba siendo un archivo, y un archivo es algo que alguien puede un día exigir que se entregue. Para que esto funcione guardamos solo el día del último uso — nunca la hora.</p>
+  <p>Basta con abrir la app de vez en cuando. Y ten en cuenta que esto también se aplica a una cuenta de la que tengas copia de seguridad: si la cuenta se borra, la copia deja de servir para volver a entrar.</p>
+
+  <h2>¿Hay versión para Android o para ordenador?</h2>
+  <p>Por ahora Seixo es solo para iPhone.</p>
+  <p>Android está previsto — buena parte del trabajo ya está hecha, porque el núcleo criptográfico es el mismo en ambos sistemas — pero no hay fecha, y prefiero no inventarla. Para ordenador no hay planes.</p>
+
+  <h2>No he encontrado aquí mi pregunta</h2>
+  <div class="contact-box">
+    <p style="margin:0">Escribe a <strong><a href="mailto:seixo.app@proton.me">seixo.app@proton.me</a></strong></p>
+  </div>
+  <p>Una nota sobre lo que podemos responder: no podemos ver tus mensajes, ni tus conversaciones, ni quiénes son tus contactos. Eso significa que muchas cosas que otro servicio resolvería por ti — «restaurad mi cuenta», «recuperad aquel mensaje» — aquí no tienen solución por nuestra parte. Es el precio de todo lo demás que hay en esta página.</p>
+</div>
+</body>
+</html>
