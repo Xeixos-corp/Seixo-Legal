@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 11 de septiembre de 2026</p>
+    <p class="updated">Última actualización: 16 de septiembre de 2026</p>
   </header>
 
   <p>Esta política describe, de forma exacta y verificable frente al código fuente real de la app, qué datos recoge la app Seixo, quién más tiene acceso a ellos, durante cuánto tiempo, y cómo puedes pedir que se eliminen.</p>
@@ -157,12 +157,21 @@
   </ul>
 
   <h2>Direcciones IP</h2>
-  <p>Como cualquier servicio en internet, el servidor ve la dirección IP desde la que te conectas. Esto es lo que hacemos con ella:</p>
+  <p>Como cualquier servicio en internet, el servidor ve la dirección IP desde la que te conectas. Aparece en dos sitios, y solo podemos actuar sobre uno.</p>
+  <p><strong>En nuestra base de datos</strong>, donde sí podemos:</p>
   <ul>
     <li>El servicio de autenticación registra la IP y el tipo de dispositivo en cada sesión. <strong>Borramos esos dos campos cada minuto.</strong></li>
     <li>El registro de auditoría de la autenticación se borra al cabo de <strong>una hora</strong>.</li>
-    <li>El proveedor de alojamiento mantiene registros técnicos de las peticiones, que incluyen la IP, durante un periodo corto que define él y que no controlamos.</li>
   </ul>
+  <p><strong>En los registros del alojamiento</strong>, donde no podemos. Antes de que una petición llegue a nuestro código, la capa de entrada del proveedor la registra. Ese registro guarda, <strong>durante 24 horas</strong>:</p>
+  <ul>
+    <li>la dirección IP;</li>
+    <li>el país, la ciudad y el código postal aproximados desde donde te conectas;</li>
+    <li>tu proveedor de acceso a internet;</li>
+    <li>una huella técnica del dispositivo — la forma en que tu teléfono negocia la conexión cifrada, que no es un identificador tuyo, pero distingue aparatos;</li>
+    <li>y, en la mayoría de las peticiones, el identificador de la cuenta que la hizo.</li>
+  </ul>
+  <p>No escribimos ese registro, no podemos tocarlo ni borrarlo antes. Al cabo de 24 horas desaparece. Lo decimos entero porque durante esas horas existe, en el alojamiento, un vínculo posible entre una cuenta y un lugar — exactamente la información que el resto de esta política se esfuerza en no crear.</p>
   <p>La app no oculta tu IP. Si eso es importante para ti, usa una VPN o Tor.</p>
 
   <h2>Permisos del teléfono</h2>
@@ -190,7 +199,7 @@
   <h2>Quién más tiene acceso a tus datos</h2>
   <ul>
     <li><strong>Las personas de la conversación</strong> — solo ellas pueden descifrar el contenido, en sus teléfonos.</li>
-    <li><strong>Supabase Inc.</strong>, que aloja la base de datos y el servidor en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer.</li>
+    <li><strong>Supabase Inc.</strong>, que aloja la base de datos y el servidor en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política — texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
     <li><strong>Expo (650 Industries, Inc.) y Apple</strong>, que hacen llegar las notificaciones a tu teléfono. Reciben el token y el texto genérico de la notificación — nunca el contenido ni el remitente.</li>
     <li><strong>Proton AG</strong>, solo si nos escribes a seixo.app@proton.me.</li>
     <li><strong>Nadie más.</strong> No vendemos, alquilamos ni compartimos datos con publicidad, redes sociales ni ningún otro tercero.</li>

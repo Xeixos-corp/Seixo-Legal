@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 11 September 2026</p>
+    <p class="updated">Last updated: 16 September 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -157,12 +157,21 @@
   </ul>
 
   <h2>IP addresses</h2>
-  <p>Like any internet service, the server sees the IP address you connect from. Here is what we do with it:</p>
+  <p>Like any internet service, the server sees the IP address you connect from. It appears in two places, and we can only act on one of them.</p>
+  <p><strong>In our database</strong>, where we can act:</p>
   <ul>
     <li>The authentication service records the IP and device type for each session. <strong>We erase both fields every minute.</strong></li>
     <li>The authentication audit log is deleted after <strong>one hour</strong>.</li>
-    <li>The hosting provider keeps technical request logs, which include the IP, for a short period that it sets and we do not control.</li>
   </ul>
+  <p><strong>In the hosting logs</strong>, where we cannot. Before a request reaches our code, the provider's entry layer records it. That record keeps, <strong>for 24 hours</strong>:</p>
+  <ul>
+    <li>the IP address;</li>
+    <li>the approximate country, city and postal code you connect from;</li>
+    <li>your internet provider;</li>
+    <li>a technical fingerprint of the device — the way your phone negotiates the encrypted connection, which is not an identifier of you, but does tell devices apart;</li>
+    <li>and, on most requests, the id of the account that made it.</li>
+  </ul>
+  <p>We do not write that log, cannot touch it and cannot delete it sooner. After 24 hours it is gone. We spell it out because for those hours a link between an account and a place exists at the hosting layer — exactly the information the rest of this policy goes out of its way not to create.</p>
   <p>The app does not hide your IP. If that matters to you, use a VPN or Tor.</p>
 
   <h2>Phone permissions</h2>
@@ -190,7 +199,7 @@
   <h2>Who else has access to your data</h2>
   <ul>
     <li><strong>The people in the conversation</strong> — only they can decrypt the content, on their own phones.</li>
-    <li><strong>Supabase Inc.</strong>, which hosts the database and server in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read.</li>
+    <li><strong>Supabase Inc.</strong>, which hosts the database and server in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read. It is a United States company: the servers are in Europe, but the company operating them is subject to US law, and a legal demand made there can reach it. What would be there to hand over is exactly what this policy describes — encrypted text nobody outside the conversation can open, and minimal metadata that deletes itself within the periods given above.</li>
     <li><strong>Expo (650 Industries, Inc.) and Apple</strong>, which relay notifications to your phone. They receive the token and the generic notification text — never the content or the sender.</li>
     <li><strong>Proton AG</strong>, only if you write to us at seixo.app@proton.me.</li>
     <li><strong>No one else.</strong> We do not sell, rent or share data with advertisers, social networks or any other third parties.</li>
