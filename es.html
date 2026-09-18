@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 16 de septiembre de 2026</p>
+    <p class="updated">Última actualización: 18 de septiembre de 2026</p>
   </header>
 
   <p>Esta política describe, de forma exacta y verificable frente al código fuente real de la app, qué datos recoge la app Seixo, quién más tiene acceso a ellos, durante cuánto tiempo, y cómo puedes pedir que se eliminen.</p>
@@ -150,6 +150,13 @@
     <li><strong>Quién lo envió:</strong> en una conversación entre dos, no se guarda. <strong>En un grupo, el servidor puede ver quién envió cada mensaje</strong> mientras ese mensaje exista, porque quien lo recibe necesita saber con qué clave descifrarlo.</li>
     <li><strong>Los nombres de los grupos y los nombres que das a tus contactos</strong> nunca llegan al servidor en texto legible.</li>
   </ul>
+  <p><strong>Sobre las fotos que envías:</strong></p>
+  <ul>
+    <li><strong>Cada foto se cifra en tu teléfono</strong> con una clave hecha solo para ella, y se guarda como un archivo con el nombre del mensaje al que pertenece. La clave viaja dentro del mensaje cifrado: el servidor nunca la tiene y no puede abrir el archivo.</li>
+    <li><strong>Del archivo, el servidor ve:</strong> el tamaño — redondeado hacia arriba, para no revelar el tamaño real de la foto —, cuándo se guardó y <strong>cuándo se descargó</strong> por última vez. Esto último es casi un acuse de lectura: indica, aproximadamente, cuándo recibió la foto la otra persona. No podemos impedirlo, porque lo escribe el servicio de almacenamiento; solo existe mientras exista el archivo.</li>
+    <li><strong>No queda registrado quién envió el archivo.</strong> El servicio de almacenamiento intenta guardarlo; nosotros lo borramos antes de que se grabe.</li>
+    <li><strong>Antes de salir del teléfono, la foto se rehace</strong> sin la ubicación, el modelo del teléfono, la fecha y los demás datos que suelen llevar las fotos. La app comprueba el resultado y <strong>se niega a enviar</strong> si ha quedado alguno.</li>
+  </ul>
   <p><strong>Solo si creas una copia de seguridad:</strong></p>
   <ul>
     <li><strong>Una dirección y una contraseña derivadas de tus 12 palabras de recuperación</strong>, para poder volver a la misma cuenta en otro teléfono. La dirección termina en <code>@seixo.invalid</code>: no es un email real, no recibe correo y no revela nada sobre ti. La contraseña se guarda de forma irreversible.</li>
@@ -176,7 +183,8 @@
 
   <h2>Permisos del teléfono</h2>
   <ul>
-    <li><strong>Cámara</strong>: solo para leer el código QR de un contacto. La imagen se procesa en el teléfono y nunca se envía ni se guarda.</li>
+    <li><strong>Cámara</strong>: para leer el código QR de un contacto y para hacer fotos que decidas enviar. Un código QR se lee en el teléfono y nunca se envía ni se guarda; una foto solo sale si la envías, cifrada.</li>
+    <li><strong>Fotos</strong>: ningún acceso a tu galería. Cuando eliges una foto para enviar, es el propio iPhone el que te muestra la galería y entrega a la app solo la que elegiste.</li>
     <li><strong>Micrófono</strong>: solo para grabar mensajes de voz, cuando pulsas el botón. La grabación se cifra en el teléfono antes de salir.</li>
     <li><strong>Face ID</strong>: solo para desbloquear la app, si activas el bloqueo. Lo gestiona el propio sistema del teléfono; nada sale del aparato.</li>
     <li><strong>Notificaciones</strong>: para que sepas que ha llegado un mensaje.</li>
@@ -189,7 +197,8 @@
   <ul>
     <li><strong>Mensajes</strong>: se borran del servidor cuando termina el temporizador que elijas — entre 30 segundos y 1 semana, para la conversación o solo para un mensaje — aunque nadie abra la app.</li>
     <li><strong>Mensajes de voz</strong>: en el servidor, como máximo <strong>24 horas</strong>, o menos si el temporizador es más corto. Quien no abra la app en ese plazo no los recibe.</li>
-    <li><strong>Conversaciones</strong>: una conversación con más de 7 días se borra del servidor, con su lista de miembros, en cuanto deja de tener mensajes por expirar.</li>
+    <li><strong>Fotos</strong>: en el servidor, como máximo <strong>24 horas</strong>, o menos si el temporizador es más corto, y se borran aproximadamente un minuto después del mensaje al que pertenecen. Quien no abra la app en ese plazo no las recibe. En el teléfono de quien las recibe, duran lo que indique el temporizador de la conversación.</li>
+    <li><strong>Conversaciones</strong>: una conversación que nunca llegó a tener un mensaje se borra a los <strong>7 días</strong>. Una conversación que ya se usó se queda en el servidor mientras existan las cuentas de quienes la tienen — incluso después de que todos los mensajes hayan expirado — para que no desaparezca solo por haber estado en silencio.</li>
     <li><strong>Claves temporales nunca usadas</strong>: 30 días.</li>
     <li><strong>Cuentas</strong>: se borran tras <strong>6 meses sin abrir la app</strong>, con todo lo que les pertenece. Una copia de seguridad de esa cuenta deja de funcionar.</li>
     <li><strong>Lista de bloqueados, token de notificaciones y credenciales de la copia de seguridad</strong>: mientras exista la cuenta.</li>
@@ -199,7 +208,7 @@
   <h2>Quién más tiene acceso a tus datos</h2>
   <ul>
     <li><strong>Las personas de la conversación</strong> — solo ellas pueden descifrar el contenido, en sus teléfonos.</li>
-    <li><strong>Supabase Inc.</strong>, que aloja la base de datos y el servidor en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política — texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
+    <li><strong>Supabase Inc.</strong>, que aloja la base de datos, el servidor y los archivos cifrados de las fotos en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política — texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
     <li><strong>Expo (650 Industries, Inc.) y Apple</strong>, que hacen llegar las notificaciones a tu teléfono. Reciben el token y el texto genérico de la notificación — nunca el contenido ni el remitente.</li>
     <li><strong>Proton AG</strong>, solo si nos escribes a seixo.app@proton.me.</li>
     <li><strong>Nadie más.</strong> No vendemos, alquilamos ni compartimos datos con publicidad, redes sociales ni ningún otro tercero.</li>

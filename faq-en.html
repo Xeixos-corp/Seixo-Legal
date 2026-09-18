@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Frequently asked questions</h1>
-    <p class="updated">Last updated: 16 September 2026</p>
+    <p class="updated">Last updated: 18 September 2026</p>
   </header>
 
   <p>Answers to the questions Seixo raises by being unlike other messaging apps: it asks for no phone number, does not keep your conversations, and cannot read them. Everything here is verifiable in how the app behaves.</p>
@@ -167,6 +167,17 @@
   </ul>
   <p>When the time is up, the message disappears from the phones and from the server. What we cannot promise is anything outside the app: whoever has the message in front of them can photograph or copy it, here as anywhere.</p>
 
+  <h2>Do the photos I send reveal where I am?</h2>
+  <p>No. It is the right question to ask, because normally they do.</p>
+  <p>A photo taken with a phone carries, hidden inside it, the exact location, the device model and the time to the second. In an app where nobody knows your name, a photo of your cat could give away your home address.</p>
+  <p>So before it leaves, the photo is <strong>rebuilt from its pixels</strong>: a new file comes out, with none of that. And the app does not trust that it worked — it reads the file it produced, field by field, and <strong>refuses to send</strong> if anything that should not be there survived. If you ever see that refusal, it is the app protecting you, not a fault.</p>
+  <p>Three more things worth knowing:</p>
+  <ul>
+    <li><strong>The app never sees your library.</strong> When you choose a photo, the iPhone itself shows you your library and hands the app only the one you picked.</li>
+    <li><strong>Photos disappear like messages.</strong> On the server they last at most 24 hours, and are deleted about a minute after the message they belong to.</li>
+    <li><strong>There is no button to save a photo you received.</strong> It would be the easiest way to put it beyond the timer's reach. Anyone who truly wants to keep it can take a screenshot — but then it is a decision, not a stray tap.</li>
+  </ul>
+
   <h2>Why doesn't the notification say who wrote, or what they said?</h2>
   <p>Because there is no way for it to, and because it is better this way.</p>
   <p>The server that sends the notification <strong>never saw the content</strong> of the message — it received it already encrypted. It does not even say which conversation it is: that does not travel in the notification, precisely so that Apple and the push service never learn who you talk to. The generic wording is chosen by your phone, not by us.</p>
@@ -185,6 +196,7 @@
     <li>Which conversations exist and who belongs to each — the minimum needed to know where to deliver a message.</li>
     <li>For each message: which conversation it belongs to, the time, and the size. Never the content.</li>
     <li>In a one-to-one conversation it <strong>does not store who sent it</strong>. <strong>In a group it does</strong> — whoever receives it needs to know which key to decrypt with. We say so because it is true, not because we like it.</li>
+    <li>Of photos: one encrypted file per photo, with its size rounded, and <strong>when it was downloaded</strong>. That last part is close to a read receipt, and we cannot prevent it — but it exists only as long as the file does, a day at most.</li>
     <li>Your IP address. There is a distinction worth making here: in our database the IP is erased every minute, but the hosting provider's entry logs — which we do not control — keep, for <strong>24 hours</strong>, the IP, the approximate city and postal code, your internet provider and, in most cases, your account id. After that day they are gone. The app does not hide your IP; if that matters to you, use a VPN.</li>
   </ul>
   <p>The names you give contacts and the names of groups never reach the server in readable form.</p>

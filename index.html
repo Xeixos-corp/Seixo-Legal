@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidade</h1>
-    <p class="updated">Última atualização: 16 de setembro de 2026</p>
+    <p class="updated">Última atualização: 18 de setembro de 2026</p>
   </header>
 
   <p>Esta política descreve, de forma exata e verificável em relação ao código-fonte real da app, que dados a app Seixo recolhe, quem mais tem acesso a eles, durante quanto tempo, e como podes pedir a sua eliminação.</p>
@@ -150,6 +150,13 @@
     <li><strong>Quem enviou:</strong> numa conversa a dois, não é guardado. <strong>Num grupo, o servidor consegue ver quem enviou cada mensagem</strong> enquanto essa mensagem existir, porque quem a recebe precisa de saber com que chave a decifrar.</li>
     <li><strong>Os nomes dos grupos e os nomes que dás aos contactos</strong> nunca chegam ao servidor em texto legível.</li>
   </ul>
+  <p><strong>Sobre as fotografias que envias:</strong></p>
+  <ul>
+    <li><strong>Cada fotografia é cifrada no teu telemóvel</strong> com uma chave feita só para ela, e guardada como um ficheiro com o nome da mensagem a que pertence. A chave viaja dentro da mensagem cifrada: o servidor nunca a tem e não consegue abrir o ficheiro.</li>
+    <li><strong>Do ficheiro, o servidor vê:</strong> o tamanho — arredondado para cima, para não revelar o tamanho real da fotografia —, quando foi guardado e <strong>quando foi descarregado</strong> pela última vez. Esta última informação é quase um aviso de leitura: diz, aproximadamente, quando a outra pessoa recebeu a fotografia. Não a conseguimos impedir, porque é escrita pelo serviço de armazenamento; existe apenas enquanto o ficheiro existir.</li>
+    <li><strong>Não fica registado quem enviou o ficheiro.</strong> O serviço de armazenamento tenta guardá-lo; nós apagamo-lo antes de ser gravado.</li>
+    <li><strong>Antes de sair do telemóvel, a fotografia é refeita</strong> sem a localização, o modelo do telemóvel, a data e os outros dados que as fotografias costumam trazer. A app verifica o resultado e <strong>recusa enviar</strong> se algum desses dados tiver ficado.</li>
+  </ul>
   <p><strong>Só se criares uma cópia de segurança:</strong></p>
   <ul>
     <li><strong>Um endereço e uma palavra-passe derivados das tuas 12 palavras de recuperação</strong>, para poderes voltar à mesma conta noutro telemóvel. O endereço termina em <code>@seixo.invalid</code>: não é um email real, não recebe correio e não revela nada sobre ti. A palavra-passe é guardada em forma irreversível.</li>
@@ -176,7 +183,8 @@
 
   <h2>Permissões do telemóvel</h2>
   <ul>
-    <li><strong>Câmara</strong>: só para ler o código QR de um contacto. A imagem é processada no telemóvel e nunca é enviada nem guardada.</li>
+    <li><strong>Câmara</strong>: para ler o código QR de um contacto e para tirares fotografias que decides enviar. Um código QR é lido no telemóvel e nunca é enviado nem guardado; uma fotografia só sai se a enviares, cifrada.</li>
+    <li><strong>Fotografias</strong>: nenhum acesso à tua galeria. Quando escolhes uma fotografia para enviar, é o próprio iPhone que te mostra a galeria e entrega à app apenas a que escolheste.</li>
     <li><strong>Microfone</strong>: só para gravares mensagens de voz, quando carregas no botão. A gravação é cifrada no telemóvel antes de sair.</li>
     <li><strong>Face ID</strong>: só para desbloquear a app, se ativares o bloqueio. É tratado pelo próprio sistema do telemóvel; nada sai do aparelho.</li>
     <li><strong>Notificações</strong>: para saberes que chegou uma mensagem.</li>
@@ -189,7 +197,8 @@
   <ul>
     <li><strong>Mensagens</strong>: apagadas do servidor quando acaba o temporizador que escolheres — entre 30 segundos e 1 semana, para a conversa ou só para uma mensagem — mesmo que ninguém abra a app.</li>
     <li><strong>Mensagens de voz</strong>: no servidor, no máximo <strong>24 horas</strong>, ou menos se o temporizador for mais curto. Quem não abrir a app nesse prazo não as recebe.</li>
-    <li><strong>Conversas</strong>: uma conversa com mais de 7 dias é apagada do servidor, com a lista de membros, assim que deixa de ter mensagens por expirar.</li>
+    <li><strong>Fotografias</strong>: no servidor, no máximo <strong>24 horas</strong>, ou menos se o temporizador for mais curto, e são apagadas cerca de um minuto depois da mensagem a que pertencem. Quem não abrir a app nesse prazo não as recebe. No telemóvel de quem as recebe, duram o tempo que o temporizador da conversa indicar.</li>
+    <li><strong>Conversas</strong>: uma conversa que nunca chegou a ter uma mensagem é apagada ao fim de <strong>7 dias</strong>. Uma conversa que já foi usada fica no servidor enquanto existirem as contas de quem a tem — mesmo depois de todas as mensagens terem expirado — para não desaparecer só por ter estado em silêncio.</li>
     <li><strong>Chaves temporárias nunca usadas</strong>: 30 dias.</li>
     <li><strong>Contas</strong>: apagadas ao fim de <strong>6 meses sem abrires a app</strong>, com tudo o que lhes pertence. Uma cópia de segurança dessa conta deixa de funcionar.</li>
     <li><strong>Lista de bloqueados, token de notificações e credenciais da cópia de segurança</strong>: enquanto a conta existir.</li>
@@ -199,7 +208,7 @@
   <h2>Quem mais tem acesso aos teus dados</h2>
   <ul>
     <li><strong>As pessoas da conversa</strong> — só elas conseguem decifrar o conteúdo, nos telemóveis delas.</li>
-    <li><strong>Supabase Inc.</strong>, que aloja a base de dados e o servidor na União Europeia (Paris). Tem acesso aos dados descritos acima e ao conteúdo cifrado, que não consegue ler. É uma empresa norte-americana: os servidores estão na Europa, mas a empresa que os opera está sujeita à lei dos Estados Unidos, e um pedido legal feito lá pode alcançá-la. O que existiria para entregar é exactamente o que está descrito nesta política — texto cifrado que ninguém fora da conversa consegue abrir, e metadados mínimos que se apagam sozinhos nos prazos indicados acima.</li>
+    <li><strong>Supabase Inc.</strong>, que aloja a base de dados, o servidor e os ficheiros cifrados das fotografias na União Europeia (Paris). Tem acesso aos dados descritos acima e ao conteúdo cifrado, que não consegue ler. É uma empresa norte-americana: os servidores estão na Europa, mas a empresa que os opera está sujeita à lei dos Estados Unidos, e um pedido legal feito lá pode alcançá-la. O que existiria para entregar é exactamente o que está descrito nesta política — texto cifrado que ninguém fora da conversa consegue abrir, e metadados mínimos que se apagam sozinhos nos prazos indicados acima.</li>
     <li><strong>Expo (650 Industries, Inc.) e Apple</strong>, que encaminham as notificações até ao teu telemóvel. Recebem o token e o texto genérico da notificação — nunca o conteúdo nem o remetente.</li>
     <li><strong>Proton AG</strong>, só se nos escreveres para seixo.app@proton.me.</li>
     <li><strong>Ninguém mais.</strong> Não vendemos, alugamos nem partilhamos dados com publicidade, redes sociais ou quaisquer outros terceiros.</li>

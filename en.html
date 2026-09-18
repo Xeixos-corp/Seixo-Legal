@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 16 September 2026</p>
+    <p class="updated">Last updated: 18 September 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -150,6 +150,13 @@
     <li><strong>Who sent it:</strong> in a one-to-one conversation this is not stored. <strong>In a group, the server can see who sent each message</strong> for as long as that message exists, because recipients need to know which key to decrypt it with.</li>
     <li><strong>Group names and the names you give contacts</strong> never reach the server in readable form.</li>
   </ul>
+  <p><strong>About the photos you send:</strong></p>
+  <ul>
+    <li><strong>Each photo is encrypted on your phone</strong> with a key made for it alone, and stored as a file named after the message it belongs to. The key travels inside the encrypted message: the server never has it and cannot open the file.</li>
+    <li><strong>Of the file, the server sees:</strong> its size — rounded up, so it does not reveal the photo's real size —, when it was stored and <strong>when it was last downloaded</strong>. That last piece is close to a read receipt: it says roughly when the other person received the photo. We cannot prevent it, because the storage service writes it; it exists only as long as the file does.</li>
+    <li><strong>Who sent the file is not recorded.</strong> The storage service tries to keep it; we erase it before it is written.</li>
+    <li><strong>Before it leaves the phone, the photo is rebuilt</strong> without the location, the phone model, the date and the other data photos usually carry. The app checks the result and <strong>refuses to send</strong> if any of it survived.</li>
+  </ul>
   <p><strong>Only if you create a backup:</strong></p>
   <ul>
     <li><strong>An address and password derived from your 12 recovery words</strong>, so you can get back into the same account on another phone. The address ends in <code>@seixo.invalid</code>: it is not a real email, cannot receive mail and reveals nothing about you. The password is stored in irreversible form.</li>
@@ -176,7 +183,8 @@
 
   <h2>Phone permissions</h2>
   <ul>
-    <li><strong>Camera</strong>: only to scan a contact's QR code. The image is processed on the phone and never sent or stored.</li>
+    <li><strong>Camera</strong>: to scan a contact's QR code and to take photos you choose to send. A QR code is read on the phone and never sent or stored; a photo only leaves if you send it, encrypted.</li>
+    <li><strong>Photos</strong>: no access to your library. When you choose a photo to send, the iPhone itself shows you your library and hands the app only the one you picked.</li>
     <li><strong>Microphone</strong>: only to record voice messages, when you press the button. Recordings are encrypted on the phone before they leave it.</li>
     <li><strong>Face ID</strong>: only to unlock the app, if you turn the lock on. It is handled by the phone's own system; nothing leaves the device.</li>
     <li><strong>Notifications</strong>: so you know a message has arrived.</li>
@@ -189,7 +197,8 @@
   <ul>
     <li><strong>Messages</strong>: deleted from the server when the timer you chose runs out — between 30 seconds and 1 week, for the conversation or for a single message — even if nobody opens the app.</li>
     <li><strong>Voice messages</strong>: on the server for at most <strong>24 hours</strong>, or less if the timer is shorter. Anyone who does not open the app within that window will not receive them.</li>
-    <li><strong>Conversations</strong>: a conversation older than 7 days is deleted from the server, with its member list, as soon as it has no unexpired messages left.</li>
+    <li><strong>Photos</strong>: on the server for at most <strong>24 hours</strong>, or less if the timer is shorter, and deleted about a minute after the message they belong to. Anyone who does not open the app within that window will not receive them. On the recipient's phone they last as long as the conversation's timer says.</li>
+    <li><strong>Conversations</strong>: a conversation that never had a single message is deleted after <strong>7 days</strong>. A conversation that has been used stays on the server for as long as its members' accounts exist — even after every message has expired — so that it does not disappear merely for having been quiet.</li>
     <li><strong>Temporary keys never used</strong>: 30 days.</li>
     <li><strong>Accounts</strong>: deleted after <strong>6 months without opening the app</strong>, with everything that belongs to them. A backup of that account stops working.</li>
     <li><strong>Block list, notification token and backup credentials</strong>: for as long as the account exists.</li>
@@ -199,7 +208,7 @@
   <h2>Who else has access to your data</h2>
   <ul>
     <li><strong>The people in the conversation</strong> — only they can decrypt the content, on their own phones.</li>
-    <li><strong>Supabase Inc.</strong>, which hosts the database and server in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read. It is a United States company: the servers are in Europe, but the company operating them is subject to US law, and a legal demand made there can reach it. What would be there to hand over is exactly what this policy describes — encrypted text nobody outside the conversation can open, and minimal metadata that deletes itself within the periods given above.</li>
+    <li><strong>Supabase Inc.</strong>, which hosts the database, the server and the encrypted photo files in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read. It is a United States company: the servers are in Europe, but the company operating them is subject to US law, and a legal demand made there can reach it. What would be there to hand over is exactly what this policy describes — encrypted text nobody outside the conversation can open, and minimal metadata that deletes itself within the periods given above.</li>
     <li><strong>Expo (650 Industries, Inc.) and Apple</strong>, which relay notifications to your phone. They receive the token and the generic notification text — never the content or the sender.</li>
     <li><strong>Proton AG</strong>, only if you write to us at seixo.app@proton.me.</li>
     <li><strong>No one else.</strong> We do not sell, rent or share data with advertisers, social networks or any other third parties.</li>
