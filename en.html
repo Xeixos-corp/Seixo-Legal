@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 18 September 2026</p>
+    <p class="updated">Last updated: 21 September 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -147,14 +147,14 @@
   <ul>
     <li><strong>Which conversations exist and who belongs to each</strong> and, for groups, who owns them. This is the minimum the server needs to know where to deliver each message.</li>
     <li><strong>Messages, always encrypted.</strong> For each one the server sees which conversation it belongs to, the exact time, its size and whether it should trigger a notification — never its content.</li>
-    <li><strong>Who sent it:</strong> in a one-to-one conversation this is not stored. <strong>In a group, the server can see who sent each message</strong> for as long as that message exists, because recipients need to know which key to decrypt it with.</li>
+    <li><strong>Who sent it:</strong> in a one-to-one conversation, <strong>this is not kept in our database</strong>. But the server knows who you are at the moment you send, and the hosting logs keep for <strong>24 hours</strong> that your account sent something at that time — which, during that period, makes it possible to tell who sent each message. After 24 hours that link is gone. <strong>In a group, the server can see who sent each message</strong> for as long as that message exists, because recipients need to know which key to decrypt it with.</li>
     <li><strong>Group names and the names you give contacts</strong> never reach the server in readable form.</li>
   </ul>
   <p><strong>About the photos you send:</strong></p>
   <ul>
     <li><strong>Each photo is encrypted on your phone</strong> with a key made for it alone, and stored as a file named after the message it belongs to. The key travels inside the encrypted message: the server never has it and cannot open the file.</li>
     <li><strong>Of the file, the server sees:</strong> its size — rounded up, so it does not reveal the photo's real size —, when it was stored and <strong>when it was last downloaded</strong>. That last piece is close to a read receipt: it says roughly when the other person received the photo. We cannot prevent it, because the storage service writes it; it exists only as long as the file does.</li>
-    <li><strong>Who sent the file is not recorded.</strong> The storage service tries to keep it; we erase it before it is written.</li>
+    <li><strong>In the database, who sent the file is not recorded.</strong> The storage service tries to keep it; we erase it before it is written. (The hosting logs, as for messages, keep it for 24 hours.)</li>
     <li><strong>Before it leaves the phone, the photo is rebuilt</strong> without the location, the phone model, the date and the other data photos usually carry. The app checks the result and <strong>refuses to send</strong> if any of it survived.</li>
   </ul>
   <p><strong>Only if you create a backup:</strong></p>

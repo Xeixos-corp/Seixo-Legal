@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidade</h1>
-    <p class="updated">Última atualização: 18 de setembro de 2026</p>
+    <p class="updated">Última atualização: 21 de setembro de 2026</p>
   </header>
 
   <p>Esta política descreve, de forma exata e verificável em relação ao código-fonte real da app, que dados a app Seixo recolhe, quem mais tem acesso a eles, durante quanto tempo, e como podes pedir a sua eliminação.</p>
@@ -147,14 +147,14 @@
   <ul>
     <li><strong>Que conversas existem e quem pertence a cada uma</strong> e, nos grupos, quem é o dono. É o mínimo para o servidor saber a quem entregar cada mensagem.</li>
     <li><strong>As mensagens, sempre cifradas.</strong> De cada uma, o servidor vê a conversa a que pertence, a hora exata, o tamanho e se deve gerar notificação — nunca o conteúdo.</li>
-    <li><strong>Quem enviou:</strong> numa conversa a dois, não é guardado. <strong>Num grupo, o servidor consegue ver quem enviou cada mensagem</strong> enquanto essa mensagem existir, porque quem a recebe precisa de saber com que chave a decifrar.</li>
+    <li><strong>Quem enviou:</strong> numa conversa a dois, <strong>não fica guardado na nossa base de dados</strong>. Mas o servidor sabe quem és no momento em que envias, e os registos do alojamento guardam durante <strong>24 horas</strong> que a tua conta enviou algo àquela hora — o que permite, nesse período, saber quem enviou cada mensagem. Ao fim de 24 horas essa ligação desaparece. <strong>Num grupo, o servidor consegue ver quem enviou cada mensagem</strong> enquanto essa mensagem existir, porque quem a recebe precisa de saber com que chave a decifrar.</li>
     <li><strong>Os nomes dos grupos e os nomes que dás aos contactos</strong> nunca chegam ao servidor em texto legível.</li>
   </ul>
   <p><strong>Sobre as fotografias que envias:</strong></p>
   <ul>
     <li><strong>Cada fotografia é cifrada no teu telemóvel</strong> com uma chave feita só para ela, e guardada como um ficheiro com o nome da mensagem a que pertence. A chave viaja dentro da mensagem cifrada: o servidor nunca a tem e não consegue abrir o ficheiro.</li>
     <li><strong>Do ficheiro, o servidor vê:</strong> o tamanho — arredondado para cima, para não revelar o tamanho real da fotografia —, quando foi guardado e <strong>quando foi descarregado</strong> pela última vez. Esta última informação é quase um aviso de leitura: diz, aproximadamente, quando a outra pessoa recebeu a fotografia. Não a conseguimos impedir, porque é escrita pelo serviço de armazenamento; existe apenas enquanto o ficheiro existir.</li>
-    <li><strong>Não fica registado quem enviou o ficheiro.</strong> O serviço de armazenamento tenta guardá-lo; nós apagamo-lo antes de ser gravado.</li>
+    <li><strong>Na base de dados, não fica registado quem enviou o ficheiro.</strong> O serviço de armazenamento tenta guardá-lo; nós apagamo-lo antes de ser gravado. (Os registos do alojamento, como para as mensagens, guardam-no durante 24 horas.)</li>
     <li><strong>Antes de sair do telemóvel, a fotografia é refeita</strong> sem a localização, o modelo do telemóvel, a data e os outros dados que as fotografias costumam trazer. A app verifica o resultado e <strong>recusa enviar</strong> se algum desses dados tiver ficado.</li>
   </ul>
   <p><strong>Só se criares uma cópia de segurança:</strong></p>
