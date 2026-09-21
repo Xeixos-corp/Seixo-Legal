@@ -167,16 +167,24 @@
   </ul>
   <p>When the time is up, the message disappears from the phones and from the server. What we cannot promise is anything outside the app: whoever has the message in front of them can photograph or copy it, here as anywhere.</p>
 
+  <h2>Can I delete a message I have already sent?</h2>
+  <p>Yes: press and hold the message and choose "Delete now". It disappears from the server, from your phone and from the other person's — straight away if they have the app open, or the next time they open it. For a photo, the file goes with it.</p>
+  <p>Anyone in the conversation can delete any message, theirs or someone else's. What no app can undo is what has already been seen: the other person may already have read it, or taken a screenshot.</p>
+
   <h2>Do the photos I send reveal where I am?</h2>
   <p>No. It is the right question to ask, because normally they do.</p>
   <p>A photo taken with a phone carries, hidden inside it, the exact location, the device model and the time to the second. In an app where nobody knows your name, a photo of your cat could give away your home address.</p>
   <p>So before it leaves, the photo is <strong>rebuilt from its pixels</strong>: a new file comes out, with none of that. And the app does not trust that it worked — it reads the file it produced, field by field, and <strong>refuses to send</strong> if anything that should not be there survived. If you ever see that refusal, it is the app protecting you, not a fault.</p>
   <p>Three more things worth knowing:</p>
   <ul>
-    <li><strong>The app never sees your library.</strong> When you choose a photo, the iPhone itself shows you your library and hands the app only the one you picked.</li>
+    <li><strong>The app never sees your library.</strong> When you choose a photo, the iPhone itself shows you your library and hands the app only the one you picked. The same when you share a photo from another app: Seixo receives only that one, and treats it exactly the same way.</li>
     <li><strong>Photos disappear like messages.</strong> On the server they last at most 24 hours, and are deleted about a minute after the message they belong to.</li>
-    <li><strong>There is no button to save a photo you received.</strong> It would be the easiest way to put it beyond the timer's reach. Anyone who truly wants to keep it can take a screenshot — but then it is a decision, not a stray tap.</li>
+    <li><strong>There is no button to save a photo you received.</strong> It would be the easiest way to put it beyond the timer's reach. Anyone who truly wants to keep it can take a screenshot — but then it is a decision, not a stray tap, and the other person will know.</li>
   </ul>
+
+  <h2>Does the other person know if I take a screenshot?</h2>
+  <p>Yes. If you take a screenshot inside a conversation, a line appears in that conversation, for everyone, saying that you did. It does not send a notification.</p>
+  <p>It is a courtesy, not a protection. The iPhone only tells the app once the screenshot has been taken, and a photo of the screen taken with another phone is not detected at all. What the notice changes is that a screenshot here is no longer silent.</p>
 
   <h2>Why doesn't the notification say who wrote, or what they said?</h2>
   <p>Because there is no way for it to, and because it is better this way.</p>
@@ -200,6 +208,7 @@
     <li>Your IP address. There is a distinction worth making here: in our database the IP is erased every minute, but the hosting provider's entry logs — which we do not control — keep, for <strong>24 hours</strong>, the IP, the approximate city and postal code, your internet provider and, in most cases, your account id. After that day they are gone. The app does not hide your IP; if that matters to you, use a VPN.</li>
   </ul>
   <p>The names you give contacts and the names of groups never reach the server in readable form.</p>
+  <p>And you do not have to take our word for any of this. On any message, press and hold and choose <strong>"What the server saw"</strong>: the app reads that message from the server right then and shows you exactly what is there. In Settings, <strong>"What the server knows"</strong> does the same for your whole account.</p>
 
   <h2>Somebody is harassing me. What do I do?</h2>
   <ul>
@@ -208,6 +217,17 @@
     <li><strong>To tell us:</strong> <strong>"Report"</strong>, at the top of the conversation, opens an email to us. Describe what happened and paste the message in question — we cannot read messages, so without that we have no way of knowing what occurred.</li>
   </ul>
   <p>Everyone you have blocked is listed under <strong>Settings → Blocked</strong>, and it can be undone.</p>
+
+  <h2>What if someone forces me to open the app?</h2>
+  <p>You can set a <strong>panic code</strong>. In <strong>Settings → App lock</strong>, choose "Seixo code": the app will ask for a six-digit code that it checks itself. There you can set a second code, the panic code.</p>
+  <p>If someone forces you to open Seixo, you type the panic code instead of the real one. The app opens as if it had just been installed — and that is what it becomes: everything on this phone is erased at that moment, conversations, photos, keys and settings, and it stops receiving notifications.</p>
+  <p>Your account stays on the server. With your backup and the 12 words you can restore it later, on this phone or another, and talk to the same contacts again. Old messages do not come back.</p>
+  <ul>
+    <li><strong>There is no undo.</strong> Choose a panic code you will not mix up with the real one.</li>
+    <li><strong>A wrong code never erases anything</strong> — it only makes you wait. Only the panic code erases, and only on purpose.</li>
+    <li><strong>The Seixo code does not use Face ID.</strong> If it did, anyone could just hold the phone up to your face. If you forget it, the only way out is to reinstall the app.</li>
+  </ul>
+  <p>What it does not protect against: someone who already copied the phone's contents before you typed the code.</p>
 
   <h2>How do I delete my account, and what disappears?</h2>
   <p><strong>Settings → Delete account.</strong> This is not a button that only clears this phone:</p>
