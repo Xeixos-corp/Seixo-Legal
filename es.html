@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 21 de septiembre de 2026</p>
+    <p class="updated">Última actualización: 25 de septiembre de 2026</p>
   </header>
 
   <p>Esta política describe, de forma exacta y verificable frente al código fuente real de la app, qué datos recoge la app Seixo, quién más tiene acceso a ellos, durante cuánto tiempo, y cómo puedes pedir que se eliminen.</p>
@@ -129,7 +129,7 @@
   <h2>En resumen</h2>
   <ul>
     <li>No pedimos número de teléfono, nombre, email ni acceso a tus contactos.</li>
-    <li>El servidor nunca puede leer tus mensajes: se cifran en tu teléfono antes de salir.</li>
+    <li>El servidor nunca puede leer tus mensajes: se cifran en tu teléfono antes de salir. La única excepción es un mensaje que alguien denuncie: quien lo recibió decide mostrarlo.</li>
     <li>Casi todo lo que guarda el servidor se borra solo — abajo decimos cuándo.</li>
     <li>No usamos publicidad, analítica ni rastreo de terceros.</li>
   </ul>
@@ -146,7 +146,7 @@
   <p><strong>Sobre tus conversaciones:</strong></p>
   <ul>
     <li><strong>Qué conversaciones existen y quién pertenece a cada una</strong> y, en los grupos, quién es el propietario. Es lo mínimo para que el servidor sepa a quién entregar cada mensaje.</li>
-    <li><strong>Los mensajes, siempre cifrados.</strong> De cada uno, el servidor ve la conversación a la que pertenece, la hora exacta, el tamaño y si debe generar notificación — nunca el contenido.</li>
+    <li><strong>Los mensajes, siempre cifrados.</strong> De cada uno, el servidor ve la conversación a la que pertenece, la hora exacta, el tamaño y si debe generar notificación — nunca el contenido, salvo que alguien denuncie ese mensaje (ver «Denuncias»).</li>
     <li><strong>Quién lo envió:</strong> en una conversación entre dos, <strong>no se guarda en nuestra base de datos</strong>. Pero el servidor sabe quién eres en el momento en que envías, y los registros del alojamiento guardan durante <strong>24 horas</strong> que tu cuenta envió algo a esa hora, lo que permite, durante ese periodo, saber quién envió cada mensaje. Pasadas 24 horas, ese vínculo desaparece. <strong>En un grupo, el servidor puede ver quién envió cada mensaje</strong> mientras ese mensaje exista, porque quien lo recibe necesita saber con qué clave descifrarlo.</li>
     <li><strong>Los nombres de los grupos y los nombres que das a tus contactos</strong> nunca llegan al servidor en texto legible.</li>
   </ul>
@@ -202,20 +202,28 @@
     <li><strong>Claves temporales nunca usadas</strong>: 30 días.</li>
     <li><strong>Cuentas</strong>: se borran tras <strong>6 meses sin abrir la app</strong>, con todo lo que les pertenece. Una copia de seguridad de esa cuenta deja de funcionar.</li>
     <li><strong>Lista de bloqueados, token de notificaciones y credenciales de la copia de seguridad</strong>: mientras exista la cuenta.</li>
+    <li><strong>Denuncias</strong>: 90 días. La marca de cuenta suspendida o expulsada: mientras exista la cuenta.</li>
     <li><strong>Direcciones IP</strong>: ver la sección anterior.</li>
   </ul>
 
   <h2>Quién más tiene acceso a tus datos</h2>
   <ul>
     <li><strong>Las personas de la conversación</strong> — solo ellas pueden descifrar el contenido, en sus teléfonos.</li>
-    <li><strong>Supabase Inc.</strong>, que aloja la base de datos, el servidor y los archivos cifrados de las fotos en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política — texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
+    <li><strong>Supabase Inc.</strong>, que aloja la base de datos, el servidor y los archivos cifrados de las fotos en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer, así como al texto de los mensajes denunciados. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política — texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
     <li><strong>Expo (650 Industries, Inc.) y Apple</strong>, que hacen llegar las notificaciones a tu teléfono. Reciben el token y el texto genérico de la notificación — nunca el contenido ni el remitente.</li>
     <li><strong>Proton AG</strong>, solo si nos escribes a seixo.app@proton.me.</li>
+    <li><strong>Resend (Resend, Inc.)</strong>, que envía al desarrollador el correo de aviso de cada denuncia. Ese correo solo dice que llegó una denuncia, cuántas personas denunciaron la cuenta y si está suspendida — nunca el texto denunciado ni identificadores.</li>
     <li><strong>Nadie más.</strong> No vendemos, alquilamos ni compartimos datos con publicidad, redes sociales ni ningún otro tercero.</li>
   </ul>
 
   <h2>Denuncias</h2>
-  <p>El botón para denunciar a un contacto abre tu app de email con un mensaje ya preparado, que incluye el identificador de ese contacto. No se envía nada hasta que pulses enviar.</p>
+  <p>Puedes denunciar un mensaje o a una persona. Es la <strong>única forma de que el contenido de un mensaje llegue al servidor en texto legible</strong>, y solo ocurre porque quien lo recibió decide mostrarlo.</p>
+  <ul>
+    <li><strong>Una denuncia guarda:</strong> quién denunció, la cuenta denunciada, la conversación y el texto del mensaje denunciado (una foto o un mensaje de voz aparecen solo como «[foto]» o «[mensaje de voz]»; el archivo no se envía). En una conversación entre dos, esto revela también quién envió ese mensaje, algo que el servidor normalmente no guarda.</li>
+    <li><strong>Quién la ve:</strong> solo el desarrollador, en una página a la que se llega desde el enlace del correo de aviso. El correo en sí solo dice que llegó una denuncia — nunca el texto ni los identificadores.</li>
+    <li><strong>Durante cuánto tiempo:</strong> la denuncia se borra <strong>90 días</strong> después de hacerse.</li>
+    <li><strong>Qué puede pasarle a la cuenta denunciada:</strong> si tres personas distintas la denuncian, queda suspendida automáticamente hasta que se revise. Si la denuncia se confirma, la cuenta es expulsada. Una cuenta suspendida o expulsada queda marcada en el servidor mientras exista, y es la única que puede ver esa marca.</li>
+  </ul>
 
   <h2>Tus derechos</h2>
   <ul>
@@ -228,7 +236,7 @@
   <p>Los mensajes se cifran de extremo a extremo con el protocolo Signal (PQXDH y Double Ratchet), mediante la biblioteca oficial <code>libsignal</code>. Tus claves quedan cifradas en el teléfono, protegidas por el Keychain (iOS) o el Keystore (Android), y las claves temporales de sesión se renuevan cada 2 días. Esto no es una garantía absoluta: ninguna app puede protegerte si tu propio teléfono está comprometido, o si alguien fotografía la pantalla con otro aparato.</p>
 
   <h2>Menores de edad</h2>
-  <p>La app no está dirigida a niños y no pedimos, a sabiendas, datos de menores de edad. Actualmente no tenemos un mecanismo de verificación de edad.</p>
+  <p>La app es solo para mayores de <strong>18 años</strong>, como dicen los términos de uso. No pedimos, a sabiendas, datos de menores de edad. No tenemos un mecanismo de verificación de edad.</p>
 
   <h2>Cambios en esta política</h2>
   <p>Si esta política cambia de forma significativa, se reflejará en esta página con la fecha de actualización revisada.</p>

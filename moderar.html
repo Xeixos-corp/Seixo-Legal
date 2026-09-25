@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Seixo — Denúncia</title>
+<!--
+  Where the developer decides on a report, from the link in the report email.
+
+  The report id and its one-time token travel in the URL fragment (after #),
+  which the browser never sends to GitHub: GitHub only sees that this page was
+  opened. The page then talks to the `moderate` Edge Function directly.
+  Nothing happens until a button is pressed -- mail services open links in
+  advance to check them, and that must never be able to expel anyone.
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC; --surface: #FFFFFF; --border: #DDD6CB;
+    --text: #2B2A27; --text-secondary: #6B6558; --accent: #CC785C; --danger: #B3261E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624; --surface: #30302E; --border: #47463F;
+      --text: #F2EFE9; --text-secondary: #B3ADA0; --accent: #DA9179; --danger: #F2B8B5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper { max-width: 640px; margin: 0 auto; padding: 40px 16px 80px; }
+  .brand { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin: 0 0 8px; }
+  h1 { font-size: 26px; margin: 0 0 20px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
+  .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; color: var(--text-secondary); margin: 0 0 6px; }
+  blockquote { margin: 0; white-space: pre-wrap; word-break: break-word; border-left: 3px solid var(--accent); padding-left: 12px; }
+  code { font-size: 13px; word-break: break-all; }
+  .muted { color: var(--text-secondary); font-size: 14px; }
+  .actions { display: grid; gap: 10px; margin-top: 8px; }
+  button { font: inherit; font-weight: 600; font-size: 16px; padding: 14px 18px; border-radius: 12px; cursor: pointer; border: 1.5px solid var(--border); background: var(--surface); color: var(--text); }
+  button.ban { background: var(--danger); border-color: var(--danger); color: #fff; }
+  button:disabled { opacity: .5; cursor: default; }
+  .result { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <p class="brand">Seixo</p>
+  <h1>Denúncia</h1>
+  <div id="app"><p class="muted">A carregar…</p></div>
+</div>
+<script>
+(function () {
+  var FN = 'https://zopexbtdbqboijysmpuy.supabase.co/functions/v1/moderate';
+  var app = document.getElementById('app');
+  var params = new URLSearchParams(location.hash.slice(1));
+  var r = params.get('r'), t = params.get('t');
+
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+  function show(nodes) { app.replaceChildren.apply(app, nodes); }
+  function message(text) { show([el('p', 'muted', text)]); }
+
+  function call(body) {
+    return fetch(FN, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); });
+  }
+
+  if (!r || !t) { message('Esta ligação está incompleta. Abre-a outra vez a partir do email.'); return; }
+
+  var STATES = { banned: 'Expulsa', suspended: 'Suspensa automaticamente (3 ou mais pessoas denunciaram)' };
+  var DONE = {
+    banned: 'Conta expulsa. Já não pode enviar mensagens nem ser adicionada a conversas, saiu de todas, e o que enviou e ainda estava no servidor foi apagado.',
+    dismissed: 'Denúncia rejeitada. Se a conta estava suspensa e deixou de haver três pessoas a denunciá-la, a suspensão foi levantada.',
+    lifted: 'Suspensão levantada e todas as denúncias em aberto contra esta conta rejeitadas.'
+  };
+
+  call({ r: r, t: t }).then(function (res) {
+    if (!res.ok || !res.data.report) { message('Esta ligação não é válida ou já expirou.'); return; }
+    var rep = res.data.report;
+    var nodes = [];
+
+    var what = el('div', 'card');
+    what.append(el('p', 'label', rep.content ? 'Mensagem denunciada' : 'Denúncia'));
+    what.append(rep.content ? el('blockquote', null, rep.content) : el('p', null, 'Denúncia da pessoa, sem uma mensagem concreta.'));
+    nodes.push(what);
+
+    var who = el('div', 'card');
+    who.append(el('p', 'label', 'Conta denunciada'));
+    who.append(el('code', null, rep.reportedUserId));
+    who.append(el('p', 'muted', 'Pessoas diferentes que a denunciaram: ' + rep.reporters));
+    who.append(el('p', 'muted', 'Estado: ' + (STATES[rep.restriction] || 'Activa')));
+    who.append(el('p', 'muted', 'Recebida: ' + new Date(rep.createdAt).toLocaleString('pt-PT')));
+    nodes.push(who);
+
+    var actions = el('div', 'actions');
+    var result = el('p', 'result');
+    function act(action, confirmText) {
+      if (confirmText && !confirm(confirmText)) return;
+      Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = true; });
+      result.textContent = 'A aplicar…';
+      call({ r: r, t: t, action: action }).then(function (out) {
+        result.textContent = out.ok ? (DONE[out.data.result] || 'Feito.') : 'Não foi possível aplicar. Tenta outra vez.';
+        if (!out.ok) Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = false; });
+      }).catch(function () {
+        result.textContent = 'Sem ligação. Tenta outra vez.';
+        Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = false; });
+      });
+    }
+    if (rep.restriction !== 'banned') {
+      var ban = el('button', 'ban', 'Expulsar esta conta');
+      ban.onclick = function () { act('ban', 'Expulsar esta conta? Não se pode desfazer.'); };
+      actions.append(ban);
+    }
+    var dismiss = el('button', null, 'Rejeitar esta denúncia');
+    dismiss.onclick = function () { act('dismiss'); };
+    actions.append(dismiss);
+    if (rep.restriction === 'suspended') {
+      var lift = el('button', null, 'Levantar a suspensão');
+      lift.onclick = function () { act('lift'); };
+      actions.append(lift);
+    }
+    nodes.push(actions, result);
+    show(nodes);
+  }).catch(function () { message('Sem ligação. Tenta outra vez.'); });
+})();
+</script>
+</body>
+</html>
