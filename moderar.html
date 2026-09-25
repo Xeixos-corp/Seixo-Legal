@@ -38,6 +38,9 @@
   h1 { font-size: 26px; margin: 0 0 20px; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
   .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; color: var(--text-secondary); margin: 0 0 6px; }
+  .evidence { margin-top: 12px; }
+  .evidence img { max-width: 100%; border-radius: 10px; display: block; }
+  .evidence audio { width: 100%; }
   blockquote { margin: 0; white-space: pre-wrap; word-break: break-word; border-left: 3px solid var(--accent); padding-left: 12px; }
   code { font-size: 13px; word-break: break-all; }
   .muted { color: var(--text-secondary); font-size: 14px; }
@@ -92,6 +95,26 @@
     var what = el('div', 'card');
     what.append(el('p', 'label', rep.content ? 'Mensagem denunciada' : 'Denúncia'));
     what.append(rep.content ? el('blockquote', null, rep.content) : el('p', null, 'Denúncia da pessoa, sem uma mensagem concreta.'));
+    // The photo or recording the reporter chose to send. The link is signed
+    // and expires in ten minutes; reopening the email link makes a new one.
+    if (rep.evidenceKind) {
+      var box = el('div', 'evidence');
+      if (!rep.evidenceUrl) {
+        box.append(el('p', 'muted', 'O ficheiro não chegou ao servidor (a pessoa pode ter perdido a ligação ao denunciar).'));
+      } else if (rep.evidenceKind === 'photo') {
+        var img = el('img');
+        img.src = rep.evidenceUrl;
+        img.alt = 'Fotografia denunciada';
+        img.onerror = function () { box.replaceChildren(el('p', 'muted', 'Não foi possível mostrar a fotografia. A ligação expira em 10 minutos: abre outra vez a partir do email.')); };
+        box.append(img);
+      } else {
+        var audio = el('audio');
+        audio.controls = true;
+        audio.src = rep.evidenceUrl;
+        box.append(audio);
+      }
+      what.append(box);
+    }
     nodes.push(what);
 
     var who = el('div', 'card');
