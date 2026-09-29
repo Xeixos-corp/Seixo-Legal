@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<title>Seixo — Denúncia</title>
+<title>Seixo — Report</title>
 <!--
   Where the developer decides on a report, from the link in the report email.
 
   The report id and its one-time token travel in the URL fragment (after #),
   which the browser never sends to GitHub: GitHub only sees that this page was
   opened. The page then talks to the `moderate` Edge Function directly.
+
+  It is in English because App Review watches this page in the review
+  recording: acting on a report is one of the things guideline 1.2 asks to see.
   Nothing happens until a button is pressed -- mail services open links in
   advance to check them, and that must never be able to expel anyone.
 -->
@@ -54,8 +57,8 @@
 <body>
 <div class="wrapper">
   <p class="brand">Seixo</p>
-  <h1>Denúncia</h1>
-  <div id="app"><p class="muted">A carregar…</p></div>
+  <h1>Report</h1>
+  <div id="app"><p class="muted">Loading…</p></div>
 </div>
 <script>
 (function () {
@@ -78,34 +81,34 @@
       .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); });
   }
 
-  if (!r || !t) { message('Esta ligação está incompleta. Abre-a outra vez a partir do email.'); return; }
+  if (!r || !t) { message('This link is incomplete. Open it again from the email.'); return; }
 
-  var STATES = { banned: 'Expulsa', suspended: 'Suspensa automaticamente (3 ou mais pessoas denunciaram)' };
+  var STATES = { banned: 'Expelled', suspended: 'Suspended automatically (3 or more people reported it)' };
   var DONE = {
-    banned: 'Conta expulsa. Já não pode enviar mensagens nem ser adicionada a conversas, saiu de todas, e o que enviou e ainda estava no servidor foi apagado.',
-    dismissed: 'Denúncia rejeitada. Se a conta estava suspensa e deixou de haver três pessoas a denunciá-la, a suspensão foi levantada.',
-    lifted: 'Suspensão levantada e todas as denúncias em aberto contra esta conta rejeitadas.'
+    banned: 'Account expelled. It can no longer send messages or be added to conversations, it has left all of them, and everything it sent that was still on the server has been deleted, including the reported message.',
+    dismissed: 'Report dismissed. If the account was suspended and fewer than three people now report it, the suspension has been lifted.',
+    lifted: 'Suspension lifted, and every open report against this account dismissed.'
   };
 
   call({ r: r, t: t }).then(function (res) {
-    if (!res.ok || !res.data.report) { message('Esta ligação não é válida ou já expirou.'); return; }
+    if (!res.ok || !res.data.report) { message('This link is not valid or has expired.'); return; }
     var rep = res.data.report;
     var nodes = [];
 
     var what = el('div', 'card');
-    what.append(el('p', 'label', rep.content ? 'Mensagem denunciada' : 'Denúncia'));
-    what.append(rep.content ? el('blockquote', null, rep.content) : el('p', null, 'Denúncia da pessoa, sem uma mensagem concreta.'));
+    what.append(el('p', 'label', rep.content ? 'Reported message' : 'Report'));
+    what.append(rep.content ? el('blockquote', null, rep.content) : el('p', null, 'A report about the person, without a specific message.'));
     // The photo or recording the reporter chose to send. The link is signed
     // and expires in ten minutes; reopening the email link makes a new one.
     if (rep.evidenceKind) {
       var box = el('div', 'evidence');
       if (!rep.evidenceUrl) {
-        box.append(el('p', 'muted', 'O ficheiro não chegou ao servidor (a pessoa pode ter perdido a ligação ao denunciar).'));
+        box.append(el('p', 'muted', 'The file did not reach the server (the person may have lost their connection while reporting).'));
       } else if (rep.evidenceKind === 'photo') {
         var img = el('img');
         img.src = rep.evidenceUrl;
-        img.alt = 'Fotografia denunciada';
-        img.onerror = function () { box.replaceChildren(el('p', 'muted', 'Não foi possível mostrar a fotografia. A ligação expira em 10 minutos: abre outra vez a partir do email.')); };
+        img.alt = 'Reported photo';
+        img.onerror = function () { box.replaceChildren(el('p', 'muted', 'Could not show the photo. The link expires after 10 minutes: open it again from the email.')); };
         box.append(img);
       } else {
         var audio = el('audio');
@@ -118,11 +121,11 @@
     nodes.push(what);
 
     var who = el('div', 'card');
-    who.append(el('p', 'label', 'Conta denunciada'));
+    who.append(el('p', 'label', 'Reported account'));
     who.append(el('code', null, rep.reportedUserId));
-    who.append(el('p', 'muted', 'Pessoas diferentes que a denunciaram: ' + rep.reporters));
-    who.append(el('p', 'muted', 'Estado: ' + (STATES[rep.restriction] || 'Activa')));
-    who.append(el('p', 'muted', 'Recebida: ' + new Date(rep.createdAt).toLocaleString('pt-PT')));
+    who.append(el('p', 'muted', 'Different people who reported it: ' + rep.reporters));
+    who.append(el('p', 'muted', 'Status: ' + (STATES[rep.restriction] || 'Active')));
+    who.append(el('p', 'muted', 'Received: ' + new Date(rep.createdAt).toLocaleString('en-GB')));
     nodes.push(who);
 
     var actions = el('div', 'actions');
@@ -130,31 +133,31 @@
     function act(action, confirmText) {
       if (confirmText && !confirm(confirmText)) return;
       Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = true; });
-      result.textContent = 'A aplicar…';
+      result.textContent = 'Applying…';
       call({ r: r, t: t, action: action }).then(function (out) {
-        result.textContent = out.ok ? (DONE[out.data.result] || 'Feito.') : 'Não foi possível aplicar. Tenta outra vez.';
+        result.textContent = out.ok ? (DONE[out.data.result] || 'Done.') : 'Could not apply. Try again.';
         if (!out.ok) Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = false; });
       }).catch(function () {
-        result.textContent = 'Sem ligação. Tenta outra vez.';
+        result.textContent = 'No connection. Try again.';
         Array.prototype.forEach.call(actions.querySelectorAll('button'), function (b) { b.disabled = false; });
       });
     }
     if (rep.restriction !== 'banned') {
-      var ban = el('button', 'ban', 'Expulsar esta conta');
-      ban.onclick = function () { act('ban', 'Expulsar esta conta? Não se pode desfazer.'); };
+      var ban = el('button', 'ban', 'Expel this account');
+      ban.onclick = function () { act('ban', 'Expel this account? This cannot be undone.'); };
       actions.append(ban);
     }
-    var dismiss = el('button', null, 'Rejeitar esta denúncia');
+    var dismiss = el('button', null, 'Dismiss this report');
     dismiss.onclick = function () { act('dismiss'); };
     actions.append(dismiss);
     if (rep.restriction === 'suspended') {
-      var lift = el('button', null, 'Levantar a suspensão');
+      var lift = el('button', null, 'Lift the suspension');
       lift.onclick = function () { act('lift'); };
       actions.append(lift);
     }
     nodes.push(actions, result);
     show(nodes);
-  }).catch(function () { message('Sem ligação. Tenta outra vez.'); });
+  }).catch(function () { message('No connection. Try again.'); });
 })();
 </script>
 </body>
