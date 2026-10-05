@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 25 September 2026</p>
+    <p class="updated">Last updated: 5 October 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -129,7 +129,7 @@
   <h2>In short</h2>
   <ul>
     <li>We never ask for a phone number, name, email or access to your contacts.</li>
-    <li>The server can never read your messages: they are encrypted on your phone before they leave it. The one exception is a message someone reports — the person who received it chooses to show it.</li>
+    <li>The server can never read your messages: they are encrypted on your phone before they leave it. The exceptions are a message someone reports — the person who received it chooses to show it — and what you write to our automatic demo account.</li>
     <li>Almost everything the server keeps deletes itself — we say below when.</li>
     <li>We use no third-party advertising, analytics or tracking.</li>
   </ul>
@@ -217,12 +217,20 @@
   </ul>
 
   <h2>Reports</h2>
-  <p>You can report a message or a person. It is the <strong>only way message content ever reaches the server in readable form</strong>, and it happens only because the person who received it chooses to show it.</p>
+  <p>You can report a message or a person. It is the <strong>only way message content ever reaches the server in readable form</strong> (apart from what is written to the demo account, below), and it happens only because the person who received it chooses to show it.</p>
   <ul>
     <li><strong>A report keeps:</strong> who reported, the reported account, the conversation, and the reported message: its text, or the photo or voice message itself, which the reporter chooses to send. In a one-to-one conversation this also reveals who sent that message, which the server does not normally keep.</li>
     <li><strong>Who sees it:</strong> only the developer, on a page reached through the link in the alert email. The email itself only says a report arrived — never the content or identifiers. A reported photo or voice message is kept in a private area of the server, and the page shows it only through a link that expires in 10 minutes.</li>
     <li><strong>For how long:</strong> the report is deleted <strong>90 days</strong> after it is made.</li>
     <li><strong>What can happen to the reported account:</strong> if three different people report it, it is suspended automatically until reviewed. If the report is confirmed, the account is expelled. A suspended or expelled account stays marked on the server for as long as it exists, and it is the only one that can see that mark.</li>
+  </ul>
+
+  <h2>Demo account</h2>
+  <p>There is an automatic demo account so the app can be tried on a single phone — it is used mainly by the App Store review team. Its ID does not appear anywhere in the app: you only write to it if someone gives it to you.</p>
+  <ul>
+    <li><strong>It is ours, and the server is its phone.</strong> So, unlike any other conversation, <strong>what you write to the demo account is decrypted by our server</strong>: it is the other end of the conversation. It reads each message only to reply, with sample messages that are always the same (one of them with offensive language, to show the filter), and it does not keep or log what it read.</li>
+    <li><strong>What it keeps:</strong> the account's own keys and, for each person who writes to it, their ID, the encrypted session with them, whether they have received the sample messages and how many replies they got that day.</li>
+    <li><strong>No other conversation</strong> goes through this code.</li>
   </ul>
 
   <h2>Your rights</h2>

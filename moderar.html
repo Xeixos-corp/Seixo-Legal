@@ -87,7 +87,8 @@
   var DONE = {
     banned: 'Account expelled. It can no longer send messages or be added to conversations, it has left all of them, and everything it sent that was still on the server has been deleted, including the reported message.',
     dismissed: 'Report dismissed. If the account was suspended and fewer than three people now report it, the suspension has been lifted.',
-    lifted: 'Suspension lifted, and every open report against this account dismissed.'
+    lifted: 'Suspension lifted, and every open report against this account dismissed.',
+    demo_account: 'This is the automatic demo account. It cannot be expelled: reviewers report it to test reporting. Dismiss the report instead.'
   };
 
   call({ r: r, t: t }).then(function (res) {
