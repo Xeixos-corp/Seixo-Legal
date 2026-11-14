@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 7 de noviembre de 2026</p>
+    <p class="updated">Última actualización: 14 de noviembre de 2026</p>
   </header>
 
   <p>Esta política describe, de forma exacta y verificable frente al código fuente real de la app, qué datos recoge la app Seixo, quién más tiene acceso a ellos, durante cuánto tiempo, y cómo puedes pedir que se eliminen.</p>
@@ -150,12 +150,14 @@
     <li><strong>Quién lo envió:</strong> en una conversación entre dos, <strong>no se guarda en nuestra base de datos</strong>. Pero el servidor sabe quién eres en el momento en que envías, y los registros del alojamiento guardan que tu cuenta envió algo a esa hora, lo que permite, mientras esos registros y el mensaje existan, saber quién lo envió. <strong>En un grupo, el servidor puede ver quién envió cada mensaje</strong> mientras ese mensaje exista, porque quien lo recibe necesita saber con qué clave descifrarlo.</li>
     <li><strong>Los nombres de los grupos y los nombres que das a tus contactos</strong> nunca llegan al servidor en texto legible.</li>
   </ul>
-  <p><strong>Sobre las fotos que envías:</strong></p>
+  <p><strong>Sobre las fotos y los archivos que envías:</strong></p>
   <ul>
     <li><strong>Cada foto se cifra en tu teléfono</strong> con una clave hecha solo para ella, y se guarda como un archivo con el nombre del mensaje al que pertenece. La clave viaja dentro del mensaje cifrado: el servidor nunca la tiene y no puede abrir el archivo.</li>
     <li><strong>Del archivo, el servidor ve:</strong> el tamaño (redondeado hacia arriba, para no revelar el tamaño real de la foto), cuándo se guardó y <strong>cuándo se descargó</strong> por última vez. Esto último es casi un acuse de lectura: indica, aproximadamente, cuándo recibió la foto la otra persona. No podemos impedirlo, porque lo escribe el servicio de almacenamiento; solo existe mientras exista el archivo.</li>
     <li><strong>En la base de datos, no queda registrado quién envió el archivo.</strong> El servicio de almacenamiento intenta guardarlo; nosotros lo borramos antes de que se grabe. (Los registros del alojamiento, como para los mensajes, registran el envío.)</li>
     <li><strong>Antes de salir del teléfono, la foto se rehace</strong> sin la ubicación, el modelo del teléfono, la fecha y los demás datos que suelen llevar las fotos. La app comprueba el resultado y <strong>se niega a enviar</strong> si ha quedado alguno.</li>
+    <li><strong>Un archivo (un PDF, un Word, un Excel, hasta 10 MB) se cifra y se guarda de la misma forma.</strong> El nombre y el tipo del archivo viajan solo dentro del mensaje cifrado: el servidor ve únicamente el tamaño redondeado, como en una foto.</li>
+    <li><strong>Un archivo no se limpia.</strong> A diferencia de una foto, la app no puede rehacerlo, y un documento puede llevar ocultos el nombre de quien lo escribió, el nombre del ordenador, fechas, versiones anteriores, comentarios o fotos con ubicación. Todo eso va cifrado y solo quien lo recibe puede leerlo, pero va. La app avisa de ello antes de cada envío.</li>
   </ul>
   <p><strong>Solo si creas una copia de seguridad:</strong></p>
   <ul>
@@ -181,11 +183,13 @@
   </ul>
   <p>No escribimos ese registro ni podemos tocarlo. Lo guarda el proveedor del alojamiento, según sus propias reglas, que no controlamos. Lo decimos entero porque, mientras existe, hay en el alojamiento un vínculo posible entre una cuenta, un lugar y su actividad, exactamente la información que el resto de esta política se esfuerza en no crear.</p>
   <p>La app no oculta tu IP. Si eso es importante para ti, usa una VPN o Tor.</p>
+  <p><strong>Ver lo que ve el alojamiento.</strong> En Ajustes, «Lo que sabe el servidor», un botón te muestra la dirección IP con que tu petición llega al servidor en ese momento. Responde una función nuestra que se limita a devolverte la dirección que llegó con la petición: no guarda nada, no registra nada y no pregunta a ningún servicio externo dónde está tu IP. El país, la ciudad y el proveedor se quedan en la capa de entrada del alojamiento y no llegan a esa función, así que el botón no los muestra. Solo se ejecuta cuando pulsas el botón. La propia petición queda en los registros del alojamiento, como cualquier otra.</p>
 
   <h2>Permisos del teléfono</h2>
   <ul>
     <li><strong>Cámara</strong>: para leer el código QR de un contacto y para hacer fotos que decidas enviar. Un código QR se lee en el teléfono y nunca se envía ni se guarda; una foto solo sale si la envías, cifrada.</li>
     <li><strong>Fotos</strong>: ningún acceso a tu galería. Cuando eliges una foto para enviar, es el propio iPhone el que te muestra la galería y entrega a la app solo la que elegiste.</li>
+    <li><strong>Archivos</strong>: ningún acceso a tus archivos. Cuando eliges uno para enviar, es el propio iPhone el que te muestra los archivos y entrega a la app solo el que elegiste.</li>
     <li><strong>Micrófono</strong>: solo para grabar mensajes de voz, cuando pulsas el botón. La grabación se cifra en el teléfono antes de salir.</li>
     <li><strong>Face ID</strong>: solo para desbloquear la app, si activas el bloqueo. Lo gestiona el propio sistema del teléfono; nada sale del aparato.</li>
     <li><strong>Notificaciones</strong>: para que sepas que ha llegado un mensaje.</li>
@@ -198,7 +202,7 @@
   <ul>
     <li><strong>Mensajes</strong>: se borran del servidor cuando termina el temporizador que elijas (entre 30 segundos y 1 semana, para la conversación o solo para un mensaje), aunque nadie abra la app.</li>
     <li><strong>Mensajes de voz</strong>: en el servidor, como máximo <strong>24 horas</strong>, o menos si el temporizador es más corto. Quien no abra la app en ese plazo no los recibe.</li>
-    <li><strong>Fotos</strong>: en el servidor, como máximo <strong>24 horas</strong>, o menos si el temporizador es más corto, y se borran aproximadamente un minuto después del mensaje al que pertenecen. Quien no abra la app en ese plazo no las recibe. En el teléfono de quien las recibe, duran lo que indique el temporizador de la conversación.</li>
+    <li><strong>Fotos y archivos</strong>: en el servidor, como máximo <strong>24 horas</strong>, o menos si el temporizador es más corto, y se borran aproximadamente un minuto después del mensaje al que pertenecen. Quien no abra la app en ese plazo no las recibe. En el teléfono de quien las recibe, duran lo que indique el temporizador de la conversación. Quien recibe un archivo puede guardarlo o abrirlo en otra app, y desde entonces ya no depende del temporizador.</li>
     <li><strong>Conversaciones</strong>: una conversación que nunca llegó a tener un mensaje se borra a los <strong>7 días</strong>. Una conversación que ya se usó se queda en el servidor mientras existan las cuentas de quienes la tienen (incluso después de que todos los mensajes hayan expirado) para que no desaparezca solo por haber estado en silencio.</li>
     <li><strong>Claves temporales nunca usadas</strong>: 30 días.</li>
     <li><strong>Cuentas</strong>: se borran tras <strong>6 meses sin abrir la app</strong>, con todo lo que les pertenece. Una copia de seguridad de esa cuenta deja de funcionar.</li>
@@ -210,7 +214,7 @@
   <h2>Quién más tiene acceso a tus datos</h2>
   <ul>
     <li><strong>Las personas de la conversación</strong>: solo ellas pueden descifrar el contenido, en sus teléfonos.</li>
-    <li><strong>Supabase Inc.</strong>, que aloja la base de datos, el servidor y los archivos cifrados de las fotos en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer, así como al contenido de los mensajes denunciados. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política: texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
+    <li><strong>Supabase Inc.</strong>, que aloja la base de datos, el servidor y los archivos cifrados de las fotos y de los archivos enviados en la Unión Europea (París). Tiene acceso a los datos descritos arriba y al contenido cifrado, que no puede leer, así como al contenido de los mensajes denunciados. Es una empresa estadounidense: los servidores están en Europa, pero la empresa que los opera está sujeta a la ley de Estados Unidos, y una solicitud legal hecha allí puede alcanzarla. Lo que habría para entregar es exactamente lo que describe esta política: texto cifrado que nadie fuera de la conversación puede abrir, y metadatos mínimos que se borran solos en los plazos indicados arriba.</li>
     <li><strong>Expo (650 Industries, Inc.) y Apple</strong>, que hacen llegar las notificaciones a tu teléfono. Reciben el token y el texto genérico de la notificación: nunca el contenido ni el remitente.</li>
     <li><strong>Proton AG</strong>, solo si nos escribes a seixo.app@proton.me.</li>
     <li><strong>Resend (Resend, Inc.)</strong>, que envía al desarrollador el correo de aviso de cada denuncia. Ese correo solo dice que llegó una denuncia, cuántas personas denunciaron la cuenta y si está suspendida: nunca el texto denunciado ni identificadores.</li>
@@ -220,14 +224,14 @@
   <h2>Denuncias</h2>
   <p>Puedes denunciar un mensaje o a una persona. Es la <strong>única forma de que el contenido de un mensaje llegue al servidor en texto legible</strong> (salvo lo que se escribe a la cuenta de demostración, más abajo), y solo ocurre porque quien lo recibió decide mostrarlo.</p>
   <ul>
-    <li><strong>Una denuncia guarda:</strong> quién denunció, la cuenta denunciada, la conversación y el mensaje denunciado: su texto, o la propia foto o mensaje de voz, que quien denuncia decide enviar. En una conversación entre dos, esto revela también quién envió ese mensaje, algo que el servidor normalmente no guarda.</li>
+    <li><strong>Una denuncia guarda:</strong> quién denunció, la cuenta denunciada, la conversación y el mensaje denunciado: su texto, o la propia foto o mensaje de voz, que quien denuncia decide enviar. De un archivo denunciado, solo se envía el nombre: el archivo en sí no se envía. En una conversación entre dos, esto revela también quién envió ese mensaje, algo que el servidor normalmente no guarda.</li>
     <li><strong>Quién la ve:</strong> solo el desarrollador, en una página a la que se llega desde el enlace del correo de aviso. El correo en sí solo dice que llegó una denuncia: nunca el contenido ni los identificadores. Una foto o un mensaje de voz denunciados se guardan en un espacio privado del servidor, y la página solo los muestra mediante un enlace que caduca en 10 minutos.</li>
     <li><strong>Durante cuánto tiempo:</strong> la denuncia se borra <strong>90 días</strong> después de hacerse.</li>
     <li><strong>Qué puede pasarle a la cuenta denunciada:</strong> si tres personas distintas la denuncian, queda suspendida automáticamente hasta que se revise. Si la denuncia se confirma, la cuenta es expulsada. Una cuenta suspendida o expulsada queda marcada en el servidor mientras exista, y es la única que puede ver esa marca.</li>
   </ul>
 
   <h2>Cuenta de demostración</h2>
-  <p>Existe una cuenta automática de demostración para que la app pueda probarse en un solo teléfono: la usa sobre todo el equipo de revisión de la App Store. Su ID no aparece en ningún sitio de la app: solo le escribes si alguien te lo da.</p>
+  <p>Existe una cuenta automática de demostración para que la app pueda probarse en un solo teléfono: la usa sobre todo el equipo de revisión de la App Store. Desde la versión 1.14 la app la ofrece, en una tarjeta de la lista de conversaciones, a quien aún no tiene ninguna conversación: solo le escribes si decides probarla.</p>
   <ul>
     <li><strong>Es nuestra, y el servidor hace de su teléfono.</strong> Por eso, a diferencia de cualquier otra conversación, <strong>lo que escribes a la cuenta de demostración lo descifra nuestro servidor</strong>: es el otro extremo de la conversación. Lee cada mensaje solo para responder, con mensajes de ejemplo siempre iguales (uno de ellos con lenguaje ofensivo, para mostrar el filtro), y no guarda ni registra lo que leyó.</li>
     <li><strong>Qué guarda:</strong> las claves de la propia cuenta y, de cada persona que le escribe, su ID, la sesión cifrada con ella, si ya recibió los mensajes de ejemplo y cuántas respuestas recibió ese día.</li>

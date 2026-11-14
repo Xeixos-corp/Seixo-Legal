@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Preguntas frecuentes</h1>
-    <p class="updated">Última actualización: 7 de noviembre de 2026</p>
+    <p class="updated">Última actualización: 14 de noviembre de 2026</p>
   </header>
 
   <p>Respuestas a las preguntas que Seixo plantea por ser distinta de otras apps de mensajería: no pide número de teléfono, no guarda tus conversaciones y no puede leerlas. Todo lo que está aquí es verificable en el comportamiento de la app.</p>
@@ -154,7 +154,8 @@
 
   <h2>¿Qué es mi ID y a quién se lo puedo dar?</h2>
   <p>Es tu dirección dentro de Seixo: una secuencia aleatoria que no dice nada sobre ti, ni nombre, ni país, ni teléfono, porque la app nunca supo nada de eso.</p>
-  <p>Lo encuentras en <strong>«Mi ID»</strong>, con un código QR. Quien esté a tu lado lee el código; quien esté lejos recibe el ID copiado por donde te convenga.</p>
+  <p>Lo encuentras en <strong>«Mi ID»</strong>, en la lista de conversaciones, con un código QR. Quien esté a tu lado lee el código; quien esté lejos recibe el ID copiado por donde te convenga.</p>
+  <p><strong>No hay nombres de usuario ni números de teléfono.</strong> Para hablar con alguien necesitas su ID: escribir su nombre no sirve. Si te mandan el mensaje entero («Mi ID de Seixo: …»), puedes pegarlo todo en el campo con el botón <strong>Pegar</strong>: la app encuentra el ID dentro. En un grupo, a quien ya es tu contacto lo eliges de la lista, sin ID.</p>
   <p>Puedes dárselo a quien quieras. Lo único que permite es iniciar una conversación contigo, y si esa persona se vuelve molesta, la bloqueas y deja de poder escribirte.</p>
 
   <h2>¿Por qué desaparecen los mensajes? ¿Puedo cambiar el tiempo?</h2>
@@ -182,6 +183,12 @@
     <li><strong>No hay botón para guardar una foto recibida.</strong> Sería la forma más fácil de sacarla del alcance del temporizador. Quien de verdad quiera guardarla puede hacer una captura de pantalla, pero entonces es una decisión, no un toque sin querer, y la otra persona se entera.</li>
   </ul>
 
+  <h2>¿Puedo enviar archivos, como un PDF o un Excel?</h2>
+  <p>Sí, hasta <strong>10 MB</strong> cada uno. Pulsa el clip junto a la caja de texto y elige <strong>«Elegir un archivo»</strong>.</p>
+  <p>El archivo se cifra en tu teléfono, como una foto, y el servidor nunca ve el contenido, el nombre ni el tipo: solo el tamaño redondeado. Se queda en el servidor 24 horas como máximo.</p>
+  <p>Hay una diferencia importante, y por eso la app avisa antes de cada envío: <strong>un archivo no se limpia.</strong> Una foto, la app la rehace desde cero y le quita la ubicación. Un PDF, un Word o un Excel no se puede rehacer, y puede llevar ocultos el nombre de quien lo escribió, el nombre del ordenador, fechas, versiones anteriores, comentarios o fotos con ubicación. Todo eso va cifrado y solo quien lo recibe puede verlo, pero va. Si el archivo es delicado, conviene limpiarlo antes, por ejemplo exportándolo de nuevo como PDF.</p>
+  <p>Y quien recibe un archivo puede guardarlo o abrirlo en otra app. A partir de ahí, ya no depende del temporizador de la conversación.</p>
+
   <h2>¿La otra persona sabe si hago una captura de pantalla?</h2>
   <p>Sí. Si haces una captura de pantalla dentro de una conversación, aparece en esa conversación, para todos, una línea que dice que la hiciste. No genera notificación.</p>
   <p>Es una cortesía, no una protección. El iPhone solo avisa a la app cuando la captura ya está hecha, y una foto de la pantalla hecha con otro teléfono no se detecta en absoluto. Lo que cambia el aviso es que una captura aquí deja de ser silenciosa.</p>
@@ -204,11 +211,11 @@
     <li>Qué conversaciones existen y quién pertenece a cada una: lo mínimo para saber a quién entregar cada mensaje.</li>
     <li>De cada mensaje: a qué conversación pertenece, la hora y el tamaño. Nunca el contenido, salvo el de un mensaje que alguien nos denuncie, y solo ese.</li>
     <li>En una conversación entre dos, <strong>no guarda quién lo envió en la base de datos</strong>, pero los registros del alojamiento permiten saberlo mientras existan. <strong>En un grupo, sí</strong>: quien lo recibe necesita saber con qué clave descifrarlo. Lo decimos porque es verdad, no porque nos guste.</li>
-    <li>De las fotos: un archivo cifrado por foto, con el tamaño redondeado, y <strong>cuándo se descargó</strong>. Esto último es casi un acuse de lectura, y no podemos impedirlo, pero solo existe mientras exista el archivo, como mucho un día.</li>
+    <li>De las fotos y los archivos: un objeto cifrado por cada uno, con el tamaño redondeado, y <strong>cuándo se descargó</strong>. El nombre y el tipo de un archivo nunca llegan. Esto último es casi un acuse de lectura, y no podemos impedirlo, pero solo existe mientras exista el archivo, como mucho un día.</li>
     <li>Tu dirección IP. Aquí hay una distinción que merece la pena: en nuestra base de datos la IP se borra cada minuto, pero los registros de entrada del alojamiento, que no controlamos, guardan la IP, la ciudad y el código postal aproximados, tu proveedor de internet, lo que se pidió (nunca el contenido) y, en la mayoría de los casos, el identificador de tu cuenta. Se guardan según las reglas del proveedor. La app no oculta tu IP; si eso te importa, usa una VPN.</li>
   </ul>
   <p>Los nombres que das a los contactos y los nombres de los grupos nunca llegan al servidor en texto legible.</p>
-  <p>Y no tienes que fiarte solo de lo que escribimos aquí. En cualquier mensaje, mantén pulsado y elige <strong>«Lo que vio el servidor»</strong>: la app lee ese mensaje en el servidor en ese momento y te muestra exactamente lo que hay. En Ajustes, <strong>«Lo que sabe el servidor»</strong> hace lo mismo con toda tu cuenta.</p>
+  <p>Y no tienes que fiarte solo de lo que escribimos aquí. En cualquier mensaje, mantén pulsado y elige <strong>«Lo que vio el servidor»</strong>: la app lee ese mensaje en el servidor en ese momento y te muestra exactamente lo que hay. En Ajustes, <strong>«Lo que sabe el servidor»</strong> hace lo mismo con toda tu cuenta, y al final tiene un botón que te muestra la dirección IP con que te ve el alojamiento en ese momento. Con una VPN, ves la dirección de la VPN.</p>
 
   <h2>¿Qué es la cuenta de demostración?</h2>
   <p>Una cuenta automática, nuestra, que responde sola con mensajes de ejemplo. Existe para que la app pueda probarse en un solo teléfono, sobre todo por el equipo de revisión de la App Store, y no aparece en ningún sitio de la app. Hay una diferencia importante: como nuestro servidor hace de su teléfono, <strong>lo que le escribes lo lee el servidor</strong>, a diferencia de cualquier conversación con una persona. Los detalles están en la <a href="es.html">política de privacidad</a>.</p>

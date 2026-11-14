@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Frequently asked questions</h1>
-    <p class="updated">Last updated: 7 November 2026</p>
+    <p class="updated">Last updated: 14 November 2026</p>
   </header>
 
   <p>Answers to the questions Seixo raises by being unlike other messaging apps: it asks for no phone number, does not keep your conversations, and cannot read them. Everything here is verifiable in how the app behaves.</p>
@@ -154,7 +154,8 @@
 
   <h2>What is my ID, and who can I give it to?</h2>
   <p>It is your address inside Seixo: a random string that says nothing about you, no name, no country, no phone number, because the app never knew any of that.</p>
-  <p>You will find it under <strong>"My ID"</strong>, with a QR code. Someone next to you scans the code; someone far away gets the ID copied through whatever channel suits you.</p>
+  <p>You will find it under <strong>"My ID"</strong>, on the conversation list, with a QR code. Someone next to you scans the code; someone far away gets the ID copied through whatever channel suits you.</p>
+  <p><strong>There are no usernames and no phone numbers.</strong> To talk to someone you need their ID: typing their name will not work. If someone sends you the whole message ("My Seixo ID: …"), you can paste all of it into the field with the <strong>Paste</strong> button: the app finds the ID inside. In a group, people who are already your contacts are picked from a list, no ID needed.</p>
   <p>Give it to whoever you like. The only thing it allows is starting a conversation with you, and if that person becomes a nuisance, you block them and they can no longer write to you.</p>
 
   <h2>Why do messages disappear? Can I change how long they last?</h2>
@@ -182,6 +183,12 @@
     <li><strong>There is no button to save a photo you received.</strong> It would be the easiest way to put it beyond the timer's reach. Anyone who truly wants to keep it can take a screenshot, but then it is a decision, not a stray tap, and the other person will know.</li>
   </ul>
 
+  <h2>Can I send files, like a PDF or an Excel sheet?</h2>
+  <p>Yes, up to <strong>10 MB</strong> each. Tap the paperclip next to the text box and choose <strong>"Choose a file"</strong>.</p>
+  <p>The file is encrypted on your phone, like a photo, and the server never sees its content, name or type: only its rounded size. It stays on the server for 24 hours at most.</p>
+  <p>There is one important difference, which is why the app warns you before every send: <strong>a file is not cleaned.</strong> A photo is rebuilt from scratch and loses its location. A PDF, a Word or an Excel file cannot be rebuilt, and can carry hidden the name of whoever wrote it, the computer's name, dates, earlier versions, comments or photos with their location. All of it travels encrypted and only the recipient can see it, but it travels. If the file is sensitive, it is worth cleaning it first, for example by exporting it again as a PDF.</p>
+  <p>And whoever receives a file can save it or open it in another app. From then on, it no longer depends on the conversation's timer.</p>
+
   <h2>Does the other person know if I take a screenshot?</h2>
   <p>Yes. If you take a screenshot inside a conversation, a line appears in that conversation, for everyone, saying that you did. It does not send a notification.</p>
   <p>It is a courtesy, not a protection. The iPhone only tells the app once the screenshot has been taken, and a photo of the screen taken with another phone is not detected at all. What the notice changes is that a screenshot here is no longer silent.</p>
@@ -204,11 +211,11 @@
     <li>Which conversations exist and who belongs to each: the minimum needed to know where to deliver a message.</li>
     <li>For each message: which conversation it belongs to, the time, and the size. Never the content: except for a message someone reports to us, and only that one.</li>
     <li>In a one-to-one conversation it <strong>does not store who sent it in the database</strong>, but the hosting logs make it possible to tell for as long as they exist. <strong>In a group it does</strong>: whoever receives it needs to know which key to decrypt with. We say so because it is true, not because we like it.</li>
-    <li>Of photos: one encrypted file per photo, with its size rounded, and <strong>when it was downloaded</strong>. That last part is close to a read receipt, and we cannot prevent it, but it exists only as long as the file does, a day at most.</li>
+    <li>Of photos and files: one encrypted object for each, with its size rounded, and <strong>when it was downloaded</strong>. A file's name and type never reach it. That last part is close to a read receipt, and we cannot prevent it, but it exists only as long as the file does, a day at most.</li>
     <li>Your IP address. There is a distinction worth making here: in our database the IP is erased every minute, but the hosting provider's entry logs, which we do not control, keep the IP, the approximate city and postal code, your internet provider, what was requested (never the content) and, in most cases, your account id. They are kept under the provider's own rules. The app does not hide your IP; if that matters to you, use a VPN.</li>
   </ul>
   <p>The names you give contacts and the names of groups never reach the server in readable form.</p>
-  <p>And you do not have to take our word for any of this. On any message, press and hold and choose <strong>"What the server saw"</strong>: the app reads that message from the server right then and shows you exactly what is there. In Settings, <strong>"What the server knows"</strong> does the same for your whole account.</p>
+  <p>And you do not have to take our word for any of this. On any message, press and hold and choose <strong>"What the server saw"</strong>: the app reads that message from the server right then and shows you exactly what is there. In Settings, <strong>"What the server knows"</strong> does the same for your whole account, and at the end has a button that shows you the IP address the host sees you with at that moment. With a VPN, you see the VPN's address.</p>
 
   <h2>What is the demo account?</h2>
   <p>An automatic account of ours that replies by itself with sample messages. It exists so the app can be tried on a single phone, mainly by the App Store review team, and it does not appear anywhere in the app. One important difference: because our server is its phone, <strong>what you write to it is read by the server</strong>, unlike any conversation with a person. The details are in the <a href="en.html">privacy policy</a>.</p>
