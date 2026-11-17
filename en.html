@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 14 November 2026</p>
+    <p class="updated">Last updated: 17 November 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -157,6 +157,7 @@
     <li><strong>In the database, who sent the file is not recorded.</strong> The storage service tries to keep it; we erase it before it is written. (The hosting logs, as for messages, record the upload.)</li>
     <li><strong>Before it leaves the phone, the photo is rebuilt</strong> without the location, the phone model, the date and the other data photos usually carry. The app checks the result and <strong>refuses to send</strong> if any of it survived.</li>
     <li><strong>A file (a PDF, a Word or an Excel document, up to 10 MB) is encrypted and stored the same way.</strong> The file's name and type travel only inside the encrypted message: the server sees only the rounded size, as with a photo.</li>
+    <li><strong>A location you send</strong> (paperclip, “Send my location”) travels only inside the encrypted message, once, when you choose to send it. The server never sees it. The app does not follow where you go and never reads your location in the background.</li>
     <li><strong>A file is not cleaned.</strong> Unlike a photo, the app cannot rebuild it, and a document can carry hidden the name of whoever wrote it, the computer's name, dates, earlier versions, comments or photos with their location. All of it travels encrypted and only the recipient can read it, but it travels. The app warns about this before every send.</li>
   </ul>
   <p><strong>Only if you create a backup:</strong></p>
@@ -184,19 +185,21 @@
   <p>We do not write that log and cannot touch it. It is kept by the hosting provider, under its own rules, which we do not control. We spell it out because, while it exists, a link between an account, a place and its activity exists at the hosting layer, exactly the information the rest of this policy goes out of its way not to create.</p>
   <p>The app does not hide your IP. If that matters to you, use a VPN or Tor.</p>
   <p><strong>See what the host sees.</strong> In Settings, “What the server knows”, a button shows you the IP address your request reaches the server with at that moment. The answer comes from a function of ours that only hands back the address that arrived with the request: it stores nothing, logs nothing and asks no outside service where your IP is. The country, city and provider stay in the hosting provider's entry layer and never reach that function, so the button does not show them. It only runs when you press the button. The request itself goes into the hosting logs, like any other.</p>
+  <p><strong>Notices.</strong> When it opens, the app asks the server whether there is a notice to show at the top of the conversation list. That request goes <strong>without your account's identification</strong>: the list is public and the same for everyone, and the hosting logs keep only the IP, not the account. Whether you saw, dismissed or opened a notice is kept only on your phone. We have no statistics about it.</p>
 
   <h2>Phone permissions</h2>
   <ul>
     <li><strong>Camera</strong>: to scan a contact's QR code and to take photos you choose to send. A QR code is read on the phone and never sent or stored; a photo only leaves if you send it, encrypted.</li>
     <li><strong>Photos</strong>: no access to your library. When you choose a photo to send, the iPhone itself shows you your library and hands the app only the one you picked.</li>
     <li><strong>Files</strong>: no access to your files. When you choose one to send, the iPhone itself shows you your files and hands the app only the one you picked.</li>
+    <li><strong>Location</strong>: only “while using the app”, and only when you choose to send your location to a conversation. It is read once, at that moment, and travels encrypted. Never in the background.</li>
     <li><strong>Microphone</strong>: only to record voice messages, when you press the button. Recordings are encrypted on the phone before they leave it.</li>
     <li><strong>Face ID</strong>: only to unlock the app, if you turn the lock on. It is handled by the phone's own system; nothing leaves the device.</li>
     <li><strong>Notifications</strong>: so you know a message has arrived.</li>
   </ul>
 
   <h2>What we do not collect</h2>
-  <p>Phone number, name, real email (unless you write to us for support), your phone's contact list, location, photos or advertising identifiers. We use no analytics, tracking or advertising SDKs.</p>
+  <p>Phone number, name, real email (unless you write to us for support), your phone's contact list, location (the one you send in a conversation travels encrypted and we cannot read it), photos or advertising identifiers. We use no analytics, tracking or advertising SDKs.</p>
 
   <h2>How long we keep data</h2>
   <ul>
@@ -224,7 +227,7 @@
   <h2>Reports</h2>
   <p>You can report a message or a person. It is the <strong>only way message content ever reaches the server in readable form</strong> (apart from what is written to the demo account, below), and it happens only because the person who received it chooses to show it.</p>
   <ul>
-    <li><strong>A report keeps:</strong> who reported, the reported account, the conversation, and the reported message: its text, or the photo or voice message itself, which the reporter chooses to send. For a reported file, only its name goes: the file itself is not sent. In a one-to-one conversation this also reveals who sent that message, which the server does not normally keep.</li>
+    <li><strong>A report keeps:</strong> who reported, the reported account, the conversation, and the reported message: its text, or the photo or voice message itself, which the reporter chooses to send. For a reported file, only its name goes: the file itself is not sent. For a reported location, the location does not go. In a one-to-one conversation this also reveals who sent that message, which the server does not normally keep.</li>
     <li><strong>Who sees it:</strong> only the developer, on a page reached through the link in the alert email. The email itself only says a report arrived: never the content or identifiers. A reported photo or voice message is kept in a private area of the server, and the page shows it only through a link that expires in 10 minutes.</li>
     <li><strong>For how long:</strong> the report is deleted <strong>90 days</strong> after it is made.</li>
     <li><strong>What can happen to the reported account:</strong> if three different people report it, it is suspended automatically until reviewed. If the report is confirmed, the account is expelled. A suspended or expelled account stays marked on the server for as long as it exists, and it is the only one that can see that mark.</li>

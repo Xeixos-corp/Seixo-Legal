@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: 14 de noviembre de 2026</p>
+    <p class="updated">Última actualización: 17 de noviembre de 2026</p>
   </header>
 
   <p>Esta política describe, de forma exacta y verificable frente al código fuente real de la app, qué datos recoge la app Seixo, quién más tiene acceso a ellos, durante cuánto tiempo, y cómo puedes pedir que se eliminen.</p>
@@ -157,6 +157,7 @@
     <li><strong>En la base de datos, no queda registrado quién envió el archivo.</strong> El servicio de almacenamiento intenta guardarlo; nosotros lo borramos antes de que se grabe. (Los registros del alojamiento, como para los mensajes, registran el envío.)</li>
     <li><strong>Antes de salir del teléfono, la foto se rehace</strong> sin la ubicación, el modelo del teléfono, la fecha y los demás datos que suelen llevar las fotos. La app comprueba el resultado y <strong>se niega a enviar</strong> si ha quedado alguno.</li>
     <li><strong>Un archivo (un PDF, un Word, un Excel, hasta 10 MB) se cifra y se guarda de la misma forma.</strong> El nombre y el tipo del archivo viajan solo dentro del mensaje cifrado: el servidor ve únicamente el tamaño redondeado, como en una foto.</li>
+    <li><strong>Una ubicación que envíes</strong> (en el clip, «Enviar mi ubicación») viaja solo dentro del mensaje cifrado, una vez, cuando decides enviarla. El servidor nunca la ve. La app no sigue por dónde vas y no lee la ubicación en segundo plano.</li>
     <li><strong>Un archivo no se limpia.</strong> A diferencia de una foto, la app no puede rehacerlo, y un documento puede llevar ocultos el nombre de quien lo escribió, el nombre del ordenador, fechas, versiones anteriores, comentarios o fotos con ubicación. Todo eso va cifrado y solo quien lo recibe puede leerlo, pero va. La app avisa de ello antes de cada envío.</li>
   </ul>
   <p><strong>Solo si creas una copia de seguridad:</strong></p>
@@ -184,19 +185,21 @@
   <p>No escribimos ese registro ni podemos tocarlo. Lo guarda el proveedor del alojamiento, según sus propias reglas, que no controlamos. Lo decimos entero porque, mientras existe, hay en el alojamiento un vínculo posible entre una cuenta, un lugar y su actividad, exactamente la información que el resto de esta política se esfuerza en no crear.</p>
   <p>La app no oculta tu IP. Si eso es importante para ti, usa una VPN o Tor.</p>
   <p><strong>Ver lo que ve el alojamiento.</strong> En Ajustes, «Lo que sabe el servidor», un botón te muestra la dirección IP con que tu petición llega al servidor en ese momento. Responde una función nuestra que se limita a devolverte la dirección que llegó con la petición: no guarda nada, no registra nada y no pregunta a ningún servicio externo dónde está tu IP. El país, la ciudad y el proveedor se quedan en la capa de entrada del alojamiento y no llegan a esa función, así que el botón no los muestra. Solo se ejecuta cuando pulsas el botón. La propia petición queda en los registros del alojamiento, como cualquier otra.</p>
+  <p><strong>Novedades.</strong> Al abrirse, la app pregunta al servidor si hay alguna novedad que mostrar arriba de la lista de conversaciones. Esa petición va <strong>sin la identificación de tu cuenta</strong>: la lista es pública e igual para todos, y los registros del alojamiento se quedan solo con la IP, no con la cuenta. Si viste, cerraste o abriste una novedad se guarda solo en tu teléfono. No tenemos estadísticas sobre eso.</p>
 
   <h2>Permisos del teléfono</h2>
   <ul>
     <li><strong>Cámara</strong>: para leer el código QR de un contacto y para hacer fotos que decidas enviar. Un código QR se lee en el teléfono y nunca se envía ni se guarda; una foto solo sale si la envías, cifrada.</li>
     <li><strong>Fotos</strong>: ningún acceso a tu galería. Cuando eliges una foto para enviar, es el propio iPhone el que te muestra la galería y entrega a la app solo la que elegiste.</li>
     <li><strong>Archivos</strong>: ningún acceso a tus archivos. Cuando eliges uno para enviar, es el propio iPhone el que te muestra los archivos y entrega a la app solo el que elegiste.</li>
+    <li><strong>Ubicación</strong>: solo «mientras se usa la app», y solo cuando decides enviar tu ubicación a una conversación. Se lee una vez, en ese momento, y va cifrada. Nunca en segundo plano.</li>
     <li><strong>Micrófono</strong>: solo para grabar mensajes de voz, cuando pulsas el botón. La grabación se cifra en el teléfono antes de salir.</li>
     <li><strong>Face ID</strong>: solo para desbloquear la app, si activas el bloqueo. Lo gestiona el propio sistema del teléfono; nada sale del aparato.</li>
     <li><strong>Notificaciones</strong>: para que sepas que ha llegado un mensaje.</li>
   </ul>
 
   <h2>Qué no recogemos</h2>
-  <p>Número de teléfono, nombre, email real (salvo que nos escribas para soporte), lista de contactos del teléfono, ubicación, fotografías ni identificadores de publicidad. No usamos ningún SDK de analítica, rastreo o publicidad.</p>
+  <p>Número de teléfono, nombre, email real (salvo que nos escribas para soporte), lista de contactos del teléfono, ubicación (la que envías en una conversación va cifrada y no podemos leerla), fotografías ni identificadores de publicidad. No usamos ningún SDK de analítica, rastreo o publicidad.</p>
 
   <h2>Durante cuánto tiempo guardamos los datos</h2>
   <ul>
@@ -224,7 +227,7 @@
   <h2>Denuncias</h2>
   <p>Puedes denunciar un mensaje o a una persona. Es la <strong>única forma de que el contenido de un mensaje llegue al servidor en texto legible</strong> (salvo lo que se escribe a la cuenta de demostración, más abajo), y solo ocurre porque quien lo recibió decide mostrarlo.</p>
   <ul>
-    <li><strong>Una denuncia guarda:</strong> quién denunció, la cuenta denunciada, la conversación y el mensaje denunciado: su texto, o la propia foto o mensaje de voz, que quien denuncia decide enviar. De un archivo denunciado, solo se envía el nombre: el archivo en sí no se envía. En una conversación entre dos, esto revela también quién envió ese mensaje, algo que el servidor normalmente no guarda.</li>
+    <li><strong>Una denuncia guarda:</strong> quién denunció, la cuenta denunciada, la conversación y el mensaje denunciado: su texto, o la propia foto o mensaje de voz, que quien denuncia decide enviar. De un archivo denunciado, solo se envía el nombre: el archivo en sí no se envía. De una ubicación denunciada, no se envía la ubicación. En una conversación entre dos, esto revela también quién envió ese mensaje, algo que el servidor normalmente no guarda.</li>
     <li><strong>Quién la ve:</strong> solo el desarrollador, en una página a la que se llega desde el enlace del correo de aviso. El correo en sí solo dice que llegó una denuncia: nunca el contenido ni los identificadores. Una foto o un mensaje de voz denunciados se guardan en un espacio privado del servidor, y la página solo los muestra mediante un enlace que caduca en 10 minutos.</li>
     <li><strong>Durante cuánto tiempo:</strong> la denuncia se borra <strong>90 días</strong> después de hacerse.</li>
     <li><strong>Qué puede pasarle a la cuenta denunciada:</strong> si tres personas distintas la denuncian, queda suspendida automáticamente hasta que se revise. Si la denuncia se confirma, la cuenta es expulsada. Una cuenta suspendida o expulsada queda marcada en el servidor mientras exista, y es la única que puede ver esa marca.</li>
