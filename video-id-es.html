@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seixo: Cómo hablar con alguien en Seixo</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC;
+    --surface: #FFFFFF;
+    --border: #DDD6CB;
+    --text: #2B2A27;
+    --text-secondary: #6B6558;
+    --accent: #CC785C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624;
+      --surface: #30302E;
+      --border: #47463F;
+      --text: #F2EFE9;
+      --text-secondary: #B3ADA0;
+      --accent: #DA9179;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+  }
+  .updated {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: var(--accent);
+  }
+  strong {
+    font-weight: 600;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .doc-switch {
+    margin-top: -12px;
+  }
+  .howto-video {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 9 / 16;
+    margin: 24px auto;
+    border-radius: 16px;
+    background: #100F0E;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <nav class="lang-switch">
+    <a href="video-id.html">Português</a>
+    <a href="video-id-en.html">English</a>
+    <a href="video-id-es.html" class="current">Español</a>
+  </nav>
+  <header>
+    <p class="brand">Seixo</p>
+    <h1>Cómo hablar con alguien en Seixo</h1>
+  </header>
+
+  <p>Seixo no tiene nombres de usuario ni números de teléfono. Para hablar con alguien, basta con que uno tenga el ID del otro.</p>
+
+  <video class="howto-video" src="media/seixo-id-es.mp4" controls playsinline preload="metadata" aria-label="Vídeo sin sonido que muestra cómo intercambiar ID en Seixo">
+    Tu navegador no puede mostrar este vídeo. Los pasos están escritos abajo.
+  </video>
+
+  <h2>Los pasos</h2>
+  <ol>
+    <li>Una persona abre <strong>«Mi ID»</strong>, en la lista de conversaciones.</li>
+    <li><strong>Si están cerca:</strong> la otra persona pulsa <strong>«Escanear QR»</strong> y apunta la cámara al código.</li>
+    <li><strong>Si están lejos:</strong> la primera persona pulsa <strong>«Compartir mi ID»</strong> y lo envía por donde quiera. La otra copia el mensaje y pulsa <strong>«Pegar»</strong> y <strong>«Nueva»</strong>.</li>
+    <li>La conversación se abre. Después, cualquiera puede escribir primero.</li>
+  </ol>
+
+  <p>Más respuestas en las <a href="faq-es.html">preguntas frecuentes</a>.</p>
+</div>
+</body>
+</html>
