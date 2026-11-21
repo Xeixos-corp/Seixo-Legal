@@ -120,7 +120,7 @@
   <header>
     <p class="brand">Seixo</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated: 17 November 2026</p>
+    <p class="updated">Last updated: 21 November 2026</p>
   </header>
 
   <p>This policy describes, accurately and verifiably against the app's actual source code, what data the Seixo app collects, who else has access to it, for how long, and how you can ask for it to be deleted.</p>
@@ -150,6 +150,14 @@
     <li><strong>Who sent it:</strong> in a one-to-one conversation, <strong>this is not kept in our database</strong>. But the server knows who you are at the moment you send, and the hosting logs record that your account sent something at that time, which, for as long as those logs and the message exist, makes it possible to tell who sent it. <strong>In a group, the server can see who sent each message</strong> for as long as that message exists, because recipients need to know which key to decrypt it with.</li>
     <li><strong>Group names and the names you give contacts</strong> never reach the server in readable form.</li>
   </ul>
+  <p><strong>About invites:</strong></p>
+  <ul>
+    <li><strong>When you create an invite</strong>, the server keeps that your account created it, when, and when it expires (7 days later). Of the invite's code it keeps only an irreversible fingerprint (hash): the code itself never reaches it when you create the invite.</li>
+    <li><strong>When someone uses it</strong>, the server keeps that it was used and when, <strong>but not who used it</strong>. The conversation that opens next is kept on the server like any other.</li>
+    <li><strong>Used or expired invites are deleted</strong> a day later.</li>
+    <li><strong>The link</strong> points to a page of ours hosted on GitHub. The code goes in the part of the link after "#", which the browser never sends to any server: GitHub sees that someone opened the page (with the IP address, as any website does), but not the invite. The page has no tracking and no cookies.</li>
+  </ul>
+
   <p><strong>About the photos and files you send:</strong></p>
   <ul>
     <li><strong>Each photo is encrypted on your phone</strong> with a key made for it alone, and stored as a file named after the message it belongs to. The key travels inside the encrypted message: the server never has it and cannot open the file.</li>
