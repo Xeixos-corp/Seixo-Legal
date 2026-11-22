@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seixo: Como convidar alguém</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F1EC;
+    --surface: #FFFFFF;
+    --border: #DDD6CB;
+    --text: #2B2A27;
+    --text-secondary: #6B6558;
+    --accent: #CC785C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #262624;
+      --surface: #30302E;
+      --border: #47463F;
+      --text: #F2EFE9;
+      --text-secondary: #B3ADA0;
+      --accent: #DA9179;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+  }
+  .updated {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: var(--text);
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: var(--accent);
+  }
+  strong {
+    font-weight: 600;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .lang-switch {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .lang-switch a {
+    margin-right: 12px;
+    text-decoration: none;
+  }
+  .lang-switch a.current {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .doc-switch {
+    margin-top: -12px;
+  }
+  ol li { margin-bottom: 12px; }
+  .note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <nav class="lang-switch">
+    <a href="convite.html" class="current">Português</a>
+    <a href="convite-en.html">English</a>
+    <a href="convite-es.html">Español</a>
+  </nav>
+  <header>
+    <p class="brand">Seixo</p>
+    <h1>Como convidar alguém</h1>
+  </header>
+
+  <p>A forma mais simples de começar uma conversa no Seixo: envias um link, a outra pessoa toca nele e a conversa abre-se. Ninguém precisa de copiar IDs.</p>
+
+  <h2>Para convidar</h2>
+  <ol>
+    <li>Na lista de conversas, carrega em <strong>«Convidar alguém»</strong>.</li>
+    <li>Escolhe por onde o enviar: mensagem, email, outra app de conversas, o que der jeito.</li>
+    <li>Pronto. Quando a outra pessoa aceitar, a conversa aparece na tua lista.</li>
+  </ol>
+
+  <h2>Quem recebe o convite</h2>
+  <ol>
+    <li><strong>Se já tem o Seixo:</strong> toca no link. O Seixo abre e pergunta <strong>«Começar uma conversa?»</strong>. Carrega em <strong>«Começar»</strong>.</li>
+    <li><strong>Se ainda não tem:</strong> toca no link e abre-se uma página com o botão <strong>«Abrir na App Store»</strong>. Instala o Seixo e cria a conta (é só abrir a app, não pede número nem email).</li>
+    <li>Depois de criar a conta, <strong>volta a tocar no link</strong> (ou, na página que se abriu, em <strong>«Abrir o convite no Seixo»</strong>). A conversa começa.</li>
+  </ol>
+
+  <h2>Bom saber</h2>
+  <ul>
+    <li><strong>Cada convite serve uma vez</strong> e expira ao fim de 7 dias. Para outra pessoa, cria outro convite.</li>
+    <li>Em <strong>«Ver os teus convites»</strong>, por baixo do botão, vês se cada um já foi usado, podes voltar a partilhá-lo ou cancelá-lo.</li>
+    <li>Quem tiver o link pode usá-lo, por isso envia-o só à pessoa que queres convidar. Se o enviaste por engano, cancela-o.</li>
+    <li>Não sabemos a quem envias o convite nem quem o usou: o servidor só sabe que foi usado.</li>
+  </ul>
+
+  <p class="note">Mais respostas nas <a href="faq.html">perguntas frequentes</a>. Também podes começar uma conversa <a href="video-id.html">trocando IDs</a>.</p>
+</div>
+</body>
+</html>
