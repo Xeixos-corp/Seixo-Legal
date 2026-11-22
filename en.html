@@ -129,7 +129,7 @@
   <h2>In short</h2>
   <ul>
     <li>We never ask for a phone number, name, email or access to your contacts.</li>
-    <li>The server can never read your messages: they are encrypted on your phone before they leave it. The exceptions are a message someone reports (the person who received it chooses to show it), and what you write to our automatic demo account.</li>
+    <li>The server can never read your messages or listen to your calls: they are encrypted on your phone before they leave it. The exceptions are a message someone reports (the person who received it chooses to show it), and what you write to our automatic demo account.</li>
     <li>Almost everything the server keeps deletes itself: we say below when.</li>
     <li>We use no third-party advertising, analytics or tracking.</li>
   </ul>
@@ -142,6 +142,7 @@
     <li><strong>The date you last used the app</strong> (the day only, never the time), so abandoned accounts can be deleted.</li>
     <li><strong>The list of people you have blocked</strong>, visible only to you.</li>
     <li><strong>A notification token</strong> for your phone and the generic text your phone chose to display (for example, “You have a new message.”). It never includes the content or the sender.</li>
+    <li><strong>A call token</strong> for your phone, separate from the one above, which lets it ring when someone calls you (see “About voice calls”).</li>
   </ul>
   <p><strong>About your conversations:</strong></p>
   <ul>
@@ -156,6 +157,15 @@
     <li><strong>When someone uses it</strong>, the server keeps that it was used and when, <strong>but not who used it</strong>. The conversation that opens next is kept on the server like any other.</li>
     <li><strong>Used or expired invites are deleted</strong> a day later.</li>
     <li><strong>The link</strong> points to a page of ours hosted on GitHub. The code goes in the part of the link after "#", which the browser never sends to any server: GitHub sees that someone opened the page (with the IP address, as any website does), but not the invite. The page has no tracking and no cookies.</li>
+  </ul>
+
+  <p><strong>About voice calls:</strong></p>
+  <ul>
+    <li><strong>The sound is end-to-end encrypted</strong> on your phone, with keys agreed inside the conversation that the Signal Protocol already encrypts. Nobody along the way can listen to it, including us.</li>
+    <li><strong>Calling, answering and hanging up travel as ordinary encrypted messages.</strong> The server stores them like any other message and cannot tell them apart: it does not know whether a call was answered or how long it lasted.</li>
+    <li><strong>To make a phone ring while the app is closed</strong>, the server asks Apple to wake the recipient’s phone. So <strong>the server knows that your account asked for another account’s phone to be rung, and when</strong>. This is not kept in our database, but the request stays in the hosting logs, like any other. The notification sent to Apple carries only a random number for the call: not your name, not your ID, not the conversation. You can only ring someone you already have a one-to-one conversation with and who has not blocked you.</li>
+    <li><strong>The sound always goes through a Cloudflare relay server</strong>, even between contacts, so the other person never learns your IP address. Cloudflare sees both sides’ IP addresses, and the time, length and amount of data of the call, but not the sound, which is encrypted.</li>
+    <li><strong>Calls are not added to the iPhone’s Phone app history</strong>, which syncs through iCloud. The conversation shows a line (“Voice call · 3:12”), only on your two phones, which disappears with the conversation’s timer.</li>
   </ul>
 
   <p><strong>About the photos and files you send:</strong></p>
@@ -201,7 +211,7 @@
     <li><strong>Photos</strong>: no access to your library. When you choose a photo to send, the iPhone itself shows you your library and hands the app only the one you picked.</li>
     <li><strong>Files</strong>: no access to your files. When you choose one to send, the iPhone itself shows you your files and hands the app only the one you picked.</li>
     <li><strong>Location</strong>: only “while using the app”, and only when you choose to send your location to a conversation. It is read once, at that moment, and travels encrypted. Never in the background.</li>
-    <li><strong>Microphone</strong>: only to record voice messages, when you press the button. Recordings are encrypted on the phone before they leave it.</li>
+    <li><strong>Microphone</strong>: only to record voice messages, when you press the button, and during voice calls. Your voice is encrypted on the phone before it leaves.</li>
     <li><strong>Face ID</strong>: only to unlock the app, if you turn the lock on. It is handled by the phone's own system; nothing leaves the device.</li>
     <li><strong>Notifications</strong>: so you know a message has arrived.</li>
   </ul>
@@ -217,7 +227,7 @@
     <li><strong>Conversations</strong>: a conversation that never had a single message is deleted after <strong>7 days</strong>. A conversation that has been used stays on the server for as long as its members' accounts exist (even after every message has expired), so that it does not disappear merely for having been quiet.</li>
     <li><strong>Temporary keys never used</strong>: 30 days.</li>
     <li><strong>Accounts</strong>: deleted after <strong>6 months without opening the app</strong>, with everything that belongs to them. A backup of that account stops working.</li>
-    <li><strong>Block list, notification token and backup credentials</strong>: for as long as the account exists.</li>
+    <li><strong>Block list, notification and call tokens, and backup credentials</strong>: for as long as the account exists.</li>
     <li><strong>Reports</strong>: 90 days. The mark of a suspended or expelled account: for as long as the account exists.</li>
     <li><strong>IP addresses</strong>: see the section above.</li>
   </ul>
@@ -226,7 +236,8 @@
   <ul>
     <li><strong>The people in the conversation</strong>: only they can decrypt the content, on their own phones.</li>
     <li><strong>Supabase Inc.</strong>, which hosts the database, the server and the encrypted photo and file uploads in the European Union (Paris). It has access to the data described above and to the encrypted content, which it cannot read, as well as to the content of reported messages. It is a United States company: the servers are in Europe, but the company operating them is subject to US law, and a legal demand made there can reach it. What would be there to hand over is exactly what this policy describes: encrypted text nobody outside the conversation can open, and minimal metadata that deletes itself within the periods given above.</li>
-    <li><strong>Expo (650 Industries, Inc.) and Apple</strong>, which relay notifications to your phone. They receive the token and the generic notification text: never the content or the sender.</li>
+    <li><strong>Expo (650 Industries, Inc.) and Apple</strong>, which relay notifications to your phone. They receive the token and the generic notification text: never the content or the sender. Call notifications go straight from our server to Apple, with the call token and a random number for the call.</li>
+    <li><strong>Cloudflare, Inc.</strong>, which relays the sound of voice calls. It sees both sides’ IP addresses, and the time, length and amount of data of each call, but not the sound, which is end-to-end encrypted. Like Supabase, it is a US company.</li>
     <li><strong>Proton AG</strong>, only if you write to us at seixo.app@proton.me.</li>
     <li><strong>Resend (Resend, Inc.)</strong>, which sends the developer the alert email for each report. That email only says a report arrived, how many people have reported the account and whether it is suspended: never the reported text or any identifiers.</li>
     <li><strong>No one else.</strong> We do not sell, rent or share data with advertisers, social networks or any other third parties.</li>
@@ -251,13 +262,13 @@
 
   <h2>Your rights</h2>
   <ul>
-    <li><strong>Delete your account and all data</strong>: at any time, under Settings → “Delete account and all data”. This deletes your identity, keys, conversation memberships, block list, notification token and backup credentials from the server, and clears the data on your phone. Messages you already sent remain encrypted until their timer deletes them, and any backup you saved stops working.</li>
+    <li><strong>Delete your account and all data</strong>: at any time, under Settings → “Delete account and all data”. This deletes your identity, keys, conversation memberships, block list, notification and call tokens, and backup credentials from the server, and clears the data on your phone. Messages you already sent remain encrypted until their timer deletes them, and any backup you saved stops working.</li>
     <li><strong>Access, correct or request a copy of your data</strong>: write to seixo.app@proton.me. Since we do not know who you are, we may ask for the ID shown in the app to find your data.</li>
     <li>If you are in the European Union, these correspond to the rights of access, rectification, erasure and portability under the GDPR.</li>
   </ul>
 
   <h2>Security</h2>
-  <p>Messages are end-to-end encrypted with the Signal Protocol (PQXDH and Double Ratchet), using the official <code>libsignal</code> library. Your keys are stored encrypted on your phone, protected by the Keychain (iOS) or Keystore (Android), and temporary session keys are renewed every 2 days. This is not an absolute guarantee: no app can protect you if your own phone is compromised, or if someone photographs the screen with another device.</p>
+  <p>Messages are end-to-end encrypted with the Signal Protocol (PQXDH and Double Ratchet), using the official <code>libsignal</code> library. Your keys are stored encrypted on your phone, protected by the Keychain (iOS) or Keystore (Android), and temporary session keys are renewed every 2 days. On the iPhone, the key that protects them becomes available only after you have unlocked the phone once since switching it on, and it never leaves the phone: that is what lets you answer a call on the lock screen. Voice calls are encrypted with DTLS-SRTP, with keys agreed inside the Signal session. This is not an absolute guarantee: no app can protect you if your own phone is compromised, or if someone photographs the screen with another device.</p>
 
   <h2>Children</h2>
   <p>The app is for adults <strong>18 and over</strong> only, as the terms of use say. We do not knowingly request data from minors. We do not have an age verification mechanism.</p>
